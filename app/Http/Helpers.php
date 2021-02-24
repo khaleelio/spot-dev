@@ -34,21 +34,24 @@ if (! function_exists('getConfigValue')) {
 }
 //Hook views
 if (! function_exists('hookView')) {
-    function hookView($addon_id,$currentView,$currentSection = null) {
+    function hookView($addon_id,$currentView,$data=null,$currentSection = null) {
         $addons = \App\Addon::all();
+        
         foreach($addons as $addon)
         {
-            if($currentSection != null)
-            {
-                $hook_file = $currentView.'_'.$currentSection;
-            }
-            else
-            {
-                $hook_file = $currentView;
-            }
-            if(file_exists(base_path('resources/views/hooks/'.$addon->unique_identifier.'/'.$addon_id.'/'.$hook_file.'.blade.php')))
-            {
-               echo view('hooks.'.$addon->unique_identifier.'.'.$addon_id.'.'.$currentView)->render();
+            if($addon->activated){
+                if($currentSection != null)
+                {
+                    $hook_file = $currentView.'_'.$currentSection; 
+                }
+                else
+                {
+                    $hook_file = $currentView;
+                }
+                if(file_exists(base_path('resources/views/hooks/'.$addon->unique_identifier.'/'.$addon_id.'/'.$hook_file.'.blade.php')))
+                {
+                echo view('hooks.'.$addon->unique_identifier.'.'.$addon_id.'.'.$currentView)->with('data',$data)->render();
+                }
             }
         }
     }
