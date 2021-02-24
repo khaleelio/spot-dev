@@ -121,7 +121,7 @@ class AddonController extends Controller
                             $req_addons = explode(',', $json['required_addons']);
                             if (count(Addon::whereIn('unique_identifier', $req_addons)->get()) == 0) {
                                 flash(translate('This addon is required another addons') . ' (' . $json['required_addons'] . ')')->error();
-                                return redirect()->route('addons.index');
+                                return back();
                             }
                         }
                         $this->recurse_copy(base_path('temp/' . $random_dir . '/addons/' . $dir), base_path('addons/' . $json['unique_identifier'] . '/'));
