@@ -35,7 +35,7 @@ if (! function_exists('getConfigValue')) {
 //Hook views
 if (! function_exists('hookView')) {
     function hookView($addon_id,$currentView,$data=null,$currentSection = null) {
-        $addons = \App\Addon::all();
+        $addons = \App\Addon::where('activated',1)->get();
         
         foreach($addons as $addon)
         {
