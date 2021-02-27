@@ -167,7 +167,7 @@ class AddonController extends Controller
                             if (file_exists($migrations_path_old)) {
                                 $files = \File::files($migrations_path_old);
                                 foreach ($files as $file) {
-                                    $file_name_without_ext = explode('.',$file->getFilename())[0];
+                                    $file_name_without_ext = explode('.', $file->getFilename())[0];
                                     DB::table('migrations')->where('migration', $file_name_without_ext)->delete();
                                 }
                             }
@@ -237,7 +237,6 @@ class AddonController extends Controller
     {
         $addon = Addon::find($id);
         $addon_folder = base_path('addons/' . $addon->unique_identifier . '/');
-        
     }
 
     private function delete_directory($dirname)
@@ -257,6 +256,156 @@ class AddonController extends Controller
         closedir($dir_handle);
         rmdir($dirname);
         return true;
+    }
+    public function generate()
+    {
+        return view('backend.addons.generate');
+    }
+    private function create_addon_structure($unique_id, $views_folder_name, $config)
+    {
+
+        $addons_path = base_path('addons/');
+        mkdir($addons_path . $unique_id, 0777, true);
+        mkdir($addons_path . $unique_id . '/controllers', 0777, true);
+        mkdir($addons_path . $unique_id . '/assets', 0777, true);
+        mkdir($addons_path . $unique_id . '/documentation', 0777, true);
+        mkdir($addons_path . $unique_id . '/helpers', 0777, true);
+        mkdir($addons_path . $unique_id . '/Resources', 0777, true);
+        mkdir($addons_path . $unique_id . '/routes', 0777, true);
+        mkdir($addons_path . $unique_id . '/sql', 0777, true);
+        mkdir($addons_path . $unique_id . '/sql/migrations', 0777, true);
+        mkdir($addons_path . $unique_id . '/sql/migrations/rollbacks', 0777, true);
+        mkdir($addons_path . $unique_id . '/views', 0777, true);
+        mkdir($addons_path . $unique_id . '/views/hooks', 0777, true);
+        mkdir($addons_path . $unique_id . '/views/' . $views_folder_name, 0777, true);
+        mkdir($addons_path . $unique_id . '/views/' . $views_folder_name . '/backend', 0777, true);
+        mkdir($addons_path . $unique_id . '/views/' . $views_folder_name . '/frontend', 0777, true);
+        mkdir($addons_path . $unique_id . '/views/' . $views_folder_name . '/inc', 0777, true);
+        mkdir($addons_path . $unique_id . '/views/' . $views_folder_name . '/permissions', 0777, true);
+        $config_file = $addons_path . $unique_id . '/config.json';
+        fopen($config_file, "w");
+        file_put_contents($config_file, $config);
+    }
+    private function reverseConfigExecution($config = array())
+    {
+
+        if (!empty($config['files'])) {
+            foreach ($config['files'] as $file) {
+                copy(base_path($file['update_directory']), base_path($file['root_directory']));
+            }
+        }
+    }
+    private function zipAddon($unique_id)
+    {
+        // // Enter the name of directory 
+        // $pathdir =  base_path("addons/".$unique_id);
+
+        // // Enter the name to creating zipped directory 
+        // $zipcreated = "addons/".$unique_id.".zip";
+
+        // // Create new zip class 
+        // $zip = new ZipArchive;
+
+        // if ($zip->open($zipcreated, ZipArchive::CREATE | ZipArchive::OVERWRITE) === TRUE) {
+        //     // Store the path into the variable 
+        //     $dir = opendir($pathdir);
+        //     while ($file = readdir($dir)) {
+        //         if (is_file($pathdir . $file)) {
+        //             $zip->addFile($pathdir . $file, $file);
+        //         }
+        //     }
+        //     $zip->close();
+        // }
+    }
+    public function generator(Request $request)
+    {
+
+        try {
+            DB::beginTransaction();
+            $check = Addon::where('unique_identifier', $request->unique_identifier)->count();
+            if ($check > 0) {
+                flash(translate('This addon created before , please check "unique_identifier" '))->error();
+                return back();
+            }
+            $addon = new Addon;
+            $addon->name = $request->title;
+            $addon->unique_identifier = $request->unique_identifier;
+            if (isset($request->required_addons) && !empty($request->required_addons)) {
+                $addon->required_addons = $request->required_addons;
+            }
+            $addon->version = $request->version;
+            $addon->activated = 1;
+            $addon->image = "test";
+            if ($addon->save()) {
+                $files_array = array();
+                $folders = array();
+                $controller_path = "";
+                $models_path = "";
+                $views_path = "";
+                $addon_root_dir = 'addons/' . $request->unique_identifier . '/';
+
+
+                $create_model = array('command' => 'make:model ' . $request->model_file_name, 'params' => array(), 'creation_path' => 'app/');
+                $create_controller = array('command' => 'make:controller ' . $request->controller_file_name . ' --resource', 'params' => array(), 'creation_path' => 'app/Http/Controllers/');
+                Artisan::call($create_controller['command']);
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'controllers/' . $request->controller_file_name . '.php', 'update_directory' => $create_controller['creation_path'] . $request->controller_file_name . '.php']);
+                Artisan::call($create_model['command']);
+                array_push($files_array, ['root_directory' => $addon_root_dir . $request->model_file_name . '.php', 'update_directory' => $create_model['creation_path'] . $request->model_file_name . '.php']);
+                fopen(base_path('routes/' . $request->route_file_name), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'routes/' . $request->route_file_name, 'update_directory' => 'routes/' . $request->route_file_name]);
+                $view_folder_full_path = 'resources/views/backend/' . $request->view_folder_name;
+                if (is_dir(base_path($view_folder_full_path)) == false) {
+                    mkdir(base_path($view_folder_full_path), 0777, true);
+                }
+                array_push($folders, $view_folder_full_path);
+                $counter = count($files_array);
+                foreach ($request->views as $view) {
+                    fopen(base_path($view_folder_full_path . '/' . $view['view_file_name']), "w");
+                    $files_array[$counter]['root_directory'] = $addon_root_dir . 'views/' . $request->view_folder_name . '/backend/' . $view['view_file_name'];
+                    $files_array[$counter]['update_directory'] = $view_folder_full_path . '/' . $view['view_file_name'];
+                    $counter++;
+                }
+                fopen(base_path('resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php'), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/inc/' . $addon->unique_identifier . '_sidenav.blade.php', 'update_directory' => 'resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php']);
+                fopen(base_path('resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php'), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/permissions/' . $addon->unique_identifier . '_permissions.blade.php', 'update_directory' => 'resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php']);
+
+
+
+                $config_array = [
+                    'name' => $request->title,
+                    'unique_identifier' => $request->unique_identfier,
+                    'version' => $request->version,
+                    'minimum_item_version' => $request->minimum_item_version,
+                    'addon_banner' => 'example.jpg',
+                    'required_addons' => $request->required_addons,
+                    'directory' => [
+                        [
+                            'name' => $folders,
+                        ],
+                    ],
+                    'sql_file' => '',
+                    'files' => $files_array
+
+                ];
+                $addon->files = json_encode($config_array);
+                $addon->save();
+                $fullConfigFileInJson = json_encode($config_array, JSON_PRETTY_PRINT);
+                $this->create_addon_structure($addon->unique_identifier, $request->view_folder_name, $fullConfigFileInJson);
+                $this->reverseConfigExecution($config_array);
+                $this->zipAddon($addon->unique_identifier);
+            }
+            DB::commit();
+            flash(translate("Addon generated successfully"))->success();
+            return back();
+        } catch (\Exception $e) {
+            DB::rollback();
+            print_r($e->getMessage());
+            exit;
+
+            flash(translate("Error"))->error();
+            return back();
+        }
     }
     public function delete($id)
     {
@@ -278,7 +427,7 @@ class AddonController extends Controller
         if (file_exists($migrations_path_old)) {
             $files = \File::files($migrations_path_old);
             foreach ($files as $file) {
-                $file_name_without_ext = explode('.',$file->getFilename())[0];
+                $file_name_without_ext = explode('.', $file->getFilename())[0];
                 DB::table('migrations')->where('migration', $file_name_without_ext)->delete();
             }
         }
@@ -290,10 +439,8 @@ class AddonController extends Controller
             $files = \File::files($migrations_path);
             foreach ($files as $file) {
                 //rollback migration
-                Artisan::call('migrate', array('--path' => $migrations_temp_path.$file->getFilename(), '--force' => true));
-                
+                Artisan::call('migrate', array('--path' => $migrations_temp_path . $file->getFilename(), '--force' => true));
             }
-            
         }
         //Delete files
         if (!empty($json['files'])) {
@@ -307,7 +454,7 @@ class AddonController extends Controller
             foreach ($json['directory'][0]['name'] as $directory) {
                 if (is_dir(base_path($directory)) == true) {
                     $this->delete_directory(base_path($directory));
-                } 
+                }
             }
         }
 
@@ -315,16 +462,13 @@ class AddonController extends Controller
 
         flash(translate('This addon is deleted successfully'))->success();
         return redirect()->route('addons.index');
-
-
     }
 
     public function resetSystem()
     {
         $all_addons = Addon::all();
-        foreach($all_addons as $addon)
-        {
-            
+        foreach ($all_addons as $addon) {
+
             $addon_folder = base_path('addons/' . $addon->unique_identifier . '/');
             $str = file_get_contents($addon_folder . 'config.json');
             $json = json_decode($str, true);
@@ -336,17 +480,17 @@ class AddonController extends Controller
                     return redirect()->route('addons.index');
                 }
             }
-    
+
             //delte migration files info from migrations table
             $migrations_path_old = 'addons/' . $addon->unique_identifier . '/sql/migrations/';
             if (file_exists($migrations_path_old)) {
                 $files = \File::files($migrations_path_old);
                 foreach ($files as $file) {
-                    $file_name_without_ext = explode('.',$file->getFilename())[0];
+                    $file_name_without_ext = explode('.', $file->getFilename())[0];
                     DB::table('migrations')->where('migration', $file_name_without_ext)->delete();
                 }
             }
-    
+
             //Rollback database
             $migrations_temp_path = 'addons/' . $addon->unique_identifier . '/sql/migrations/rollbacks/';
             $migrations_path =  base_path($migrations_temp_path);
@@ -354,10 +498,8 @@ class AddonController extends Controller
                 $files = \File::files($migrations_path);
                 foreach ($files as $file) {
                     //rollback migration
-                    Artisan::call('migrate', array('--path' => $migrations_temp_path.$file->getFilename(), '--force' => true));
-                    
+                    Artisan::call('migrate', array('--path' => $migrations_temp_path . $file->getFilename(), '--force' => true));
                 }
-                
             }
             //Delete files
             if (!empty($json['files'])) {
@@ -371,25 +513,28 @@ class AddonController extends Controller
                 foreach ($json['directory'][0]['name'] as $directory) {
                     if (is_dir(base_path($directory)) == true) {
                         $this->delete_directory(base_path($directory));
-                    } 
+                    }
                 }
             }
-            $this->delete_directory(base_path('addons/'.$addon->unique_identifier.'/'));
-            $addon->delete();    
+            $this->delete_directory(base_path('addons/' . $addon->unique_identifier . '/'));
+            $addon->delete();
         }
-        
-        SpotConfigHelper::setValue("installable","true");
+
+        SpotConfigHelper::setValue("installable", "true");
         return redirect('/');
     }
 
-    public function writeEnvironmentFile($type, $val) {
+    public function writeEnvironmentFile($type, $val)
+    {
         $path = base_path('.env');
-       
+
         if (file_exists($path)) {
-            
-            $val = '"'.trim($val).'"';
+
+            $val = '"' . trim($val) . '"';
             file_put_contents($path, str_replace(
-                $type.'="'.env($type).'"', $type.'='.$val, file_get_contents($path)
+                $type . '="' . env($type) . '"',
+                $type . '=' . $val,
+                file_get_contents($path)
             ));
         }
     }

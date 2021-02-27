@@ -123,6 +123,8 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	Route::post('/addons/activation', 'AddonController@activation')->name('addons.activation');
 	Route::get('/addons/delete/{id}', 'AddonController@delete')->name('addons.delete.view');
 	Route::get('/addons-reset', 'AddonController@resetSystem')->name('addons.reset');
+	Route::get('/generate-addon', 'AddonController@generate')->name('addons.generate');
+	Route::post('/generate-addon', 'AddonController@generator')->name('addons.generate.store');
 
 	Route::get('/user', 'CustomerBulkUploadController@pdf_download_user')->name('pdf.download_user');
 

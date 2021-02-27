@@ -84,7 +84,8 @@
     </div>
    
     @if(getConfigValue('is_dev') == 'true')
-    <a style="margin-top:6px"  href="{{route('addons.reset')}}" class="kt_sweetalert_demo_9 btn btn-danger font-weight-bold py-2 px-6">{{translate('Reset')}}</a>
+    <a style="margin-top:6px"  href="{{route('addons.reset')}}" class="kt_sweetalert_demo_9 btn btn-danger font-weight-bold py-2 px-6"><i class="la la-refresh"></i> {{translate('Reset')}}</a>
+    <a style="margin-top:6px"  href="{{route('addons.generate')}}" class="btn btn-success font-weight-bold py-2 px-6"><i class="fa fa-plus"></i>{{translate('Generate New Addon')}}</a>
     @endif
    
     
