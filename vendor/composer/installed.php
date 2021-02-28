@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '9def49e741dc1ee2ceab25a261b598428ed25a21',
+    'reference' => '6be70f317f98846ae358d6e2a76bf1ffc2137a4c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -231,6 +231,15 @@
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
+    ),
+    'harimayco/laravel-menu' => 
+    array (
+      'pretty_version' => '1.4.5',
+      'version' => '1.4.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '060bd4be8d90cd9f47b1b46e2cbdc7194e6b8e9e',
     ),
     'illuminate/auth' => 
     array (
@@ -500,12 +509,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '9def49e741dc1ee2ceab25a261b598428ed25a21',
+      'reference' => '6be70f317f98846ae358d6e2a76bf1ffc2137a4c',
     ),
     'laravel/passport' => 
     array (
@@ -671,7 +680,6 @@
       'version' => 'dev-master',
       'aliases' => 
       array (
-        0 => '9999999-dev',
       ),
       'reference' => '0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f',
     ),
@@ -681,7 +689,6 @@
       'version' => 'dev-master',
       'aliases' => 
       array (
-        0 => '9999999-dev',
       ),
       'reference' => '14130fa885065b18f1464524b0d6591df90d8e71',
     ),
@@ -810,7 +817,6 @@
       'version' => 'dev-master',
       'aliases' => 
       array (
-        0 => '9999999-dev',
       ),
       'reference' => '1a2ed767bb09374a8a222069930e94fccf99009e',
     ),
@@ -1264,7 +1270,6 @@
       'version' => 'dev-master',
       'aliases' => 
       array (
-        0 => '9999999-dev',
       ),
       'reference' => '123e505e2aa9057fc092416b59c1b904b4873f1e',
     ),

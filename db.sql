@@ -2283,7 +2283,9 @@ INSERT INTO `translations` (`id`, `lang`, `lang_key`, `lang_value`, `created_at`
 (1492, 'en', 'Client Profile', 'Client Profile', '2021-02-11 23:05:35', '2021-02-11 23:05:35'),
 (1493, 'en', 'This addon is updated successfully', 'This addon is updated successfully', '2021-02-11 23:42:44', '2021-02-11 23:42:44'),
 (1494, 'en', 'This addon is deleted successfully', 'This addon is deleted successfully', '2021-02-16 21:32:28', '2021-02-16 21:32:28'),
-(1495, 'en', 'Addon installed successfully', 'Addon installed successfully', '2021-02-16 22:10:17', '2021-02-16 22:10:17');
+(1495, 'en', 'Addon installed successfully', 'Addon installed successfully', '2021-02-16 22:10:17', '2021-02-16 22:10:17'),
+(1496, 'en', 'Parent Category', 'Parent Category', '2021-02-28 22:10:17', '2021-02-28 22:10:17'),
+(1497, 'en', 'Menus', 'Menus', '2021-02-28 22:10:17', '2021-02-28 22:10:17');
 
 -- --------------------------------------------------------
 

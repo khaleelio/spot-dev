@@ -74,6 +74,8 @@
 		type="text/css" />
 	<!--end::Layout Themes-->
 	@endif
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<script>
 		var AIZ = AIZ || {};
