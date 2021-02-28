@@ -365,8 +365,8 @@ class AddonController extends Controller
                     $files_array[$counter]['update_directory'] = $view_folder_full_path . '/' . $view['view_file_name'];
                     $counter++;
                 }
-                fopen(base_path('resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php'), "w");
-                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/inc/' . $addon->unique_identifier . '_sidenav.blade.php', 'update_directory' => 'resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php']);
+                fopen(base_path('resources/views/backend/inc/addons/' . $addon->unique_identifier . '_sidenav.blade.php'), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/inc/' . $addon->unique_identifier . '_sidenav.blade.php', 'update_directory' => 'resources/views/backend/inc/addons/' . $addon->unique_identifier . '_sidenav.blade.php']);
                 fopen(base_path('resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php'), "w");
                 array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/permissions/' . $addon->unique_identifier . '_permissions.blade.php', 'update_directory' => 'resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php']);
 
