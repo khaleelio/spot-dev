@@ -48,9 +48,11 @@ if (! function_exists('hookView')) {
                 {
                     $hook_file = $currentView;
                 }
+               
                 if(file_exists(base_path('resources/views/hooks/'.$addon->unique_identifier.'/'.$addon_id.'/'.$hook_file.'.blade.php')))
                 {
-                echo view('hooks.'.$addon->unique_identifier.'.'.$addon_id.'.'.$currentView)->with('data',$data)->render();
+                    
+                echo view('hooks.'.$addon->unique_identifier.'.'.$addon_id.'.'.$hook_file)->with('data',$data)->render();
                 }
             }
         }
