@@ -18,6 +18,6 @@
 
 @endsection
 
-@section('modal')
+@section('script')
     {!! Menu::scripts() !!}
 @endsection
