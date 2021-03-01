@@ -34,6 +34,7 @@ final class Versions
      */
     const VERSIONS          = array (
   'anandsiddharth/laravel-paytm-wallet' => 'v1.0.16@5cf4c586e9b40cf01d8b9bc35e67f8d932318d4b',
+  'arrilot/laravel-widgets' => '3.13.1@ae0e44ce625026ae71c6ab9259f89f13af227e37',
   'aws/aws-sdk-php' => '3.171.8@1f7f7c1db844f6c988c93008f902b352c7616da8',
   'barryvdh/laravel-dompdf' => 'v0.8.7@30310e0a675462bf2aa9d448c8dcbf57fbcc517d',
   'cinetpay/cinetpay-php' => '1.9.2@8a4a53bce076036fc5d6781bee839719780f2028',
@@ -179,7 +180,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'webmozart/assert' => '1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389',
-  'laravel/laravel' => 'dev-main@6be70f317f98846ae358d6e2a76bf1ffc2137a4c',
+  'laravel/laravel' => 'dev-main@9d563dcbefafa8f530f561eaeb1c4ab36c88a161',
 );
 
     private function __construct()
