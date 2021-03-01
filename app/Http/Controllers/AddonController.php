@@ -374,7 +374,7 @@ class AddonController extends Controller
 
                 $config_array = [
                     'name' => $request->title,
-                    'unique_identifier' => $request->unique_identfier,
+                    'unique_identifier' => $addon->unique_identifier,
                     'version' => $request->version,
                     'minimum_item_version' => $request->minimum_item_version,
                     'addon_banner' => 'example.jpg',
