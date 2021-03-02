@@ -27,4 +27,17 @@ class WidgetController extends Controller
         flash(translate('New widget has been created successfully'))->success();
         return redirect()->route('website.widget.index');
     }
+
+    public function destroy($id)
+    {
+        $widget = AdminWidget::findOrFail($id);
+        if(count($widget->item) == 0){
+            $widget->delete();
+        }else{
+            flash(translate("You can't delete this widget , you have to delete or move all items first"))->error();
+            return redirect()->back();
+        }
+        flash(translate('Item has been deleted successfully'))->success();
+        return redirect()->back();
+    }
 }

@@ -23,7 +23,7 @@
     </div>
 
     <div class="card">
-        <div class="card-header my-3 row">
+        <div class="row p-5">
             <div class="col-lg-6">
                 <h5 class="card-title">{{ translate('Add New Widget') }}</h5>
                 <form class="form-inline" action="{{ route('website.widget.store') }}" method="POST"
@@ -42,86 +42,20 @@
                 </div>
             @endif
         </div>
-        <div class="card-body row">
-            <div class="col-lg-3">
-                @widget('mainWidget')
-            </div>
-            <div class="col-lg-3">
-                @widget('mainWidget')
-            </div>
-            <div class="col-lg-3">
-                @widget('mainWidget')
-            </div>
-            <div class="col-lg-3">
-                @widget('mainWidget')
-            </div>
-        </div>
-        <div class="parent row">
+        <div class="parent card-body row">
             @forelse ($widgets as $widget)
-                <div class="dragula-container ng-isolate-scope col-lg-4 p-3" id="widget-{{$widget->id}}">
-                    <h2>{{$widget->title}}</h2>
-                    @forelse ($widget->item as $item)
-                        <div id="item-{{$item->id}}">
-                            <span class="handle">+</span>
-                            <h3>{{$item->title}}</h3>
-                            <p>{{$item->body}}</p>
-                        </div>
-                    @empty
-                        
-                    @endforelse
-                </div>
+                @widget('mainWidget',['widget'=>$widget])
             @empty
                 
             @endforelse
         </div>
-
     </div>
 
-    {{-- Add New Item --}}
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form action="{{ route('website.widget.item.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">{{ translate('New Item') }}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">{{ translate('Title') }}*:</label>
-                                <input type="text" class="form-control" id="recipient-name" name="title" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">{{ translate('Body') }}*:</label>
-                                <textarea class="form-control" id="message-text" name="body" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">{{ translate('Link') }}:</label>
-                                <input type="text" class="form-control" id="recipient-name" name="link">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">{{ translate('Widget') }}:</label>
-                                <select class="form-control form-control-sm" aria-label="Default select example"
-                                    name="widget_id">
-                                    @foreach ($widgets as $widget)
-                                        <option value="{{ $widget->id }}">{{ $widget->title }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ translate('Close') }}</button>
-                        <button type="submit" class="btn btn-primary">{{ translate('Save') }}</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+@endsection
 
+@section('modal')
+    @include('modals.add_widget_item_modal')
+    @include('modals.delete_modal')
 @endsection
 
 @section('script')
@@ -138,12 +72,23 @@
 
         dragula(widgets, {
             moves: function (el, container, handle) {
-                console.log(el);
-                console.log(container);
+                // console.log(el);
+                // console.log(container);
                 // console.log(handle);
                 return handle.classList.contains('handle');
             }
+        }).on('drop', function (el, container) {
+            var item_devs = container.getElementsByTagName('div');
+            var items_order = [];
+            for (let index = 0; index < item_devs.length; index++) {
+                items_order.push( item_devs[index].dataset.itemId );
+            }
+            // console.log(items_order);
+            // console.log(container.dataset.widgetId);
+            $.post('{{ route('website.widget.item.position') }}', { _token: AIZ.data.csrf, items:items_order, widget_id:container.dataset.widgetId}, function(data){
+                console.log(data);
+            });
         });
-        
+
     </script>
 @endsection

@@ -11,7 +11,9 @@ class MainWidget extends AbstractWidget
      *
      * @var array
      */
-    protected $config = [];
+    protected $config = [
+        'widget'=> ''
+    ];
 
     /**
      * Treat this method as a controller action.
