@@ -286,6 +286,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'A' => 
         array (
             'Aws\\' => 4,
+            'Arrilot\\Widgets\\' => 16,
             'App\\' => 4,
             'Anand\\LaravelPaytmWallet\\' => 25,
         ),
@@ -735,6 +736,10 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         array (
             0 => __DIR__ . '/..' . '/aws/aws-sdk-php/src',
         ),
+        'Arrilot\\Widgets\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/arrilot/laravel-widgets/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -864,8 +869,11 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Http\\Controllers\\InstallController' => __DIR__ . '/../..' . '/app/Http/Controllers/InstallController.php',
         'App\\Http\\Controllers\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LanguageController.php',
         'App\\Http\\Controllers\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/MenuController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\MissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MissionsController.php',
         'App\\Http\\Controllers\\PackagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PackagesController.php',
+=======
+>>>>>>> f1d47e3067250e3bf5ad45d3699c948a1f93c38b
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\PolicyController' => __DIR__ . '/../..' . '/app/Http/Controllers/PolicyController.php',
         'App\\Http\\Controllers\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfileController.php',
@@ -973,6 +981,26 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\UserClient' => __DIR__ . '/../..' . '/app/UserClient.php',
         'App\\UsersImport' => __DIR__ . '/../..' . '/app/UsersImport.php',
         'App\\Utility\\TranslationUtility' => __DIR__ . '/../..' . '/app/Utility/TranslationUtility.php',
+        'Arrilot\\Widgets\\AbstractWidget' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/AbstractWidget.php',
+        'Arrilot\\Widgets\\AsyncFacade' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/AsyncFacade.php',
+        'Arrilot\\Widgets\\Console\\WidgetMakeCommand' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Console/WidgetMakeCommand.php',
+        'Arrilot\\Widgets\\Contracts\\ApplicationWrapperContract' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Contracts/ApplicationWrapperContract.php',
+        'Arrilot\\Widgets\\Controllers\\WidgetController' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Controllers/WidgetController.php',
+        'Arrilot\\Widgets\\Facade' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Facade.php',
+        'Arrilot\\Widgets\\Factories\\AbstractWidgetFactory' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Factories/AbstractWidgetFactory.php',
+        'Arrilot\\Widgets\\Factories\\AsyncWidgetFactory' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Factories/AsyncWidgetFactory.php',
+        'Arrilot\\Widgets\\Factories\\JavascriptFactory' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Factories/JavascriptFactory.php',
+        'Arrilot\\Widgets\\Factories\\WidgetFactory' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Factories/WidgetFactory.php',
+        'Arrilot\\Widgets\\Misc\\EncryptException' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Misc/EncryptException.php',
+        'Arrilot\\Widgets\\Misc\\InvalidWidgetClassException' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Misc/InvalidWidgetClassException.php',
+        'Arrilot\\Widgets\\Misc\\LaravelApplicationWrapper' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Misc/LaravelApplicationWrapper.php',
+        'Arrilot\\Widgets\\Misc\\NamespaceNotFoundException' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Misc/NamespaceNotFoundException.php',
+        'Arrilot\\Widgets\\Misc\\ViewExpressionTrait' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/Misc/ViewExpressionTrait.php',
+        'Arrilot\\Widgets\\NamespacesRepository' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/NamespacesRepository.php',
+        'Arrilot\\Widgets\\ServiceProvider' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/ServiceProvider.php',
+        'Arrilot\\Widgets\\WidgetGroup' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/WidgetGroup.php',
+        'Arrilot\\Widgets\\WidgetGroupCollection' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/WidgetGroupCollection.php',
+        'Arrilot\\Widgets\\WidgetId' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/WidgetId.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Aws\\ACMPCA\\ACMPCAClient' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ACMPCA/ACMPCAClient.php',
         'Aws\\ACMPCA\\Exception\\ACMPCAException' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/ACMPCA/Exception/ACMPCAException.php',

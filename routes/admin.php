@@ -72,6 +72,12 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 		Route::view('/pages', 'backend.website_settings.pages.index')->name('website.pages');
 		Route::view('/appearance', 'backend.website_settings.appearance')->name('website.appearance');
 		Route::get('/menu', 'MenuController@index')->name('website.menu.index');
+		Route::get('/widget', 'WidgetController@index')->name('website.widget.index');
+		Route::post('/widget/store', 'WidgetController@store')->name('website.widget.store');
+		Route::get('/widget/destroy/{id}', 'WidgetController@destroy')->name('website.widget.destroy');
+		Route::post('/widget/item/store', 'WidgetItemController@store')->name('website.widget.item.store');
+		Route::post('/widget/item/position', 'WidgetItemController@position')->name('website.widget.item.position');
+		Route::get('/widget/item/destroy/{id}', 'WidgetItemController@destroy')->name('website.widget.item.destroy');
 		Route::resource('custom-pages', 'PageController');
 		Route::get('/custom-pages/edit/{id}', 'PageController@edit')->name('custom-pages.edit');
 		Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.destroy');

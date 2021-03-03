@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6be70f317f98846ae358d6e2a76bf1ffc2137a4c',
+    'reference' => '9d563dcbefafa8f530f561eaeb1c4ab36c88a161',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '5cf4c586e9b40cf01d8b9bc35e67f8d932318d4b',
+    ),
+    'arrilot/laravel-widgets' => 
+    array (
+      'pretty_version' => '3.13.1',
+      'version' => '3.13.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ae0e44ce625026ae71c6ab9259f89f13af227e37',
     ),
     'aws/aws-sdk-php' => 
     array (
@@ -514,7 +523,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6be70f317f98846ae358d6e2a76bf1ffc2137a4c',
+      'reference' => '9d563dcbefafa8f530f561eaeb1c4ab36c88a161',
     ),
     'laravel/passport' => 
     array (

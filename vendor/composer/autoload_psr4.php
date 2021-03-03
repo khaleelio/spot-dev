@@ -116,6 +116,7 @@ return array(
     'BeyondCode\\DumpServer\\' => array($vendorDir . '/beyondcode/laravel-dump-server/src'),
     'Barryvdh\\DomPDF\\' => array($vendorDir . '/barryvdh/laravel-dompdf/src'),
     'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
+    'Arrilot\\Widgets\\' => array($vendorDir . '/arrilot/laravel-widgets/src'),
     'App\\' => array($baseDir . '/app'),
     'Anand\\LaravelPaytmWallet\\' => array($vendorDir . '/anandsiddharth/laravel-paytm-wallet/src'),
     '' => array($vendorDir . '/iyzico/iyzipay-php/src'),

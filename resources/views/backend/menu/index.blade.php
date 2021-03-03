@@ -1,5 +1,9 @@
 @extends('backend.layouts.app')
 
+@section('style')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+@endsection
+
 @section('content')
 
     <div class="aiz-titlebar text-left mt-2 mb-3">
@@ -18,6 +22,6 @@
 
 @endsection
 
-@section('modal')
+@section('script')
     {!! Menu::scripts() !!}
 @endsection
