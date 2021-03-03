@@ -71,6 +71,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 		Route::view('/footer', 'backend.website_settings.footer')->name('website.footer');
 		Route::view('/pages', 'backend.website_settings.pages.index')->name('website.pages');
 		Route::view('/appearance', 'backend.website_settings.appearance')->name('website.appearance');
+		Route::get('/menu', 'MenuController@index')->name('website.menu.index');
 		Route::resource('custom-pages', 'PageController');
 		Route::get('/custom-pages/edit/{id}', 'PageController@edit')->name('custom-pages.edit');
 		Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.destroy');

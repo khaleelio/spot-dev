@@ -351,8 +351,8 @@ class AddonController extends Controller
                 array_push($files_array, ['root_directory' => $addon_root_dir . 'controllers/' . $request->controller_file_name . '.php', 'update_directory' => $create_controller['creation_path'] . $request->controller_file_name . '.php']);
                 Artisan::call($create_model['command']);
                 array_push($files_array, ['root_directory' => $addon_root_dir . $request->model_file_name . '.php', 'update_directory' => $create_model['creation_path'] . $request->model_file_name . '.php']);
-                fopen(base_path('routes/' . $request->route_file_name), "w");
-                array_push($files_array, ['root_directory' => $addon_root_dir . 'routes/' . $request->route_file_name, 'update_directory' => 'routes/' . $request->route_file_name]);
+                fopen(base_path('routes/addons/' . $request->route_file_name), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'routes/' . $request->route_file_name, 'update_directory' => 'routes/addons/' . $request->route_file_name]);
                 $view_folder_full_path = 'resources/views/backend/' . $request->view_folder_name;
                 if (is_dir(base_path($view_folder_full_path)) == false) {
                     mkdir(base_path($view_folder_full_path), 0777, true);
@@ -365,8 +365,8 @@ class AddonController extends Controller
                     $files_array[$counter]['update_directory'] = $view_folder_full_path . '/' . $view['view_file_name'];
                     $counter++;
                 }
-                fopen(base_path('resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php'), "w");
-                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/inc/' . $addon->unique_identifier . '_sidenav.blade.php', 'update_directory' => 'resources/views/backend/inc/' . $addon->unique_identifier . '_sidenav.blade.php']);
+                fopen(base_path('resources/views/backend/inc/addons/' . $addon->unique_identifier . '_sidenav.blade.php'), "w");
+                array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/inc/' . $addon->unique_identifier . '_sidenav.blade.php', 'update_directory' => 'resources/views/backend/inc/addons/' . $addon->unique_identifier . '_sidenav.blade.php']);
                 fopen(base_path('resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php'), "w");
                 array_push($files_array, ['root_directory' => $addon_root_dir . 'views/' . $request->view_folder_name . '/permissions/' . $addon->unique_identifier . '_permissions.blade.php', 'update_directory' => 'resources/views/backend/permissions/' . $addon->unique_identifier . '_permissions.blade.php']);
 
@@ -445,7 +445,9 @@ class AddonController extends Controller
         //Delete files
         if (!empty($json['files'])) {
             foreach ($json['files'] as $file) {
-                unlink(base_path($file['update_directory']));
+                if (file_exists($file['update_directory'])) {
+                    unlink(base_path($file['update_directory']));
+                }   
             }
         }
         //Delete folders 
@@ -504,7 +506,9 @@ class AddonController extends Controller
             //Delete files
             if (!empty($json['files'])) {
                 foreach ($json['files'] as $file) {
-                    unlink(base_path($file['update_directory']));
+                    if (file_exists($file['update_directory'])) {
+                        unlink(base_path($file['update_directory']));
+                    }   
                 }
             }
             //Delete folders 

@@ -74,6 +74,8 @@
 		type="text/css" />
 	<!--end::Layout Themes-->
 	@endif
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<script>
 		var AIZ = AIZ || {};
@@ -326,6 +328,13 @@
 			session()->forget('flash_notification')
 			@endphp
 	    @endforeach
+
+		@if (count($errors) > 0)
+			@foreach ($errors->all() as $error)
+				AIZ.plugins.notify('warning', '{{ $error }}');
+            @endforeach
+		@endif
+		
 		$.ajaxSetup({
 			headers: {
 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

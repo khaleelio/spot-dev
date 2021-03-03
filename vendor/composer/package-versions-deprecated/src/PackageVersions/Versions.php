@@ -51,6 +51,7 @@ final class Versions
   'guzzlehttp/guzzle' => '6.5.5@9d4290de1cfd701f38099ef7e183b64b4b7b0c5e',
   'guzzlehttp/promises' => '1.4.0@60d379c243457e073cff02bc323a2a86cb355631',
   'guzzlehttp/psr7' => '1.7.0@53330f47520498c0ae1f61f7e2c90f55690c06a3',
+  'harimayco/laravel-menu' => '1.4.5@060bd4be8d90cd9f47b1b46e2cbdc7194e6b8e9e',
   'instamojo/instamojo-php' => '0.4@99dc50bf008be77be84f447607e416f73f319904',
   'iyzico/iyzipay-php' => 'v2.0.48@4eaa6fe37d739055fd5bee1a6d59b3f47be07c41',
   'jakub-onderka/php-console-color' => 'v0.2@d5deaecff52a0d61ccb613bb3804088da0307191',
@@ -83,7 +84,6 @@ final class Versions
   'nexmo/laravel' => '2.4.1@029bdc19fc58cd6ef0aa75c7041d82b9d9dc61bd',
   'nikic/php-parser' => 'v4.10.4@c6d052fc58cb876152f89f532b95a8d7907e7f0e',
   'opis/closure' => '3.6.1@943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5',
-  'orangehill/iseed' => 'v3.0.1@874f77a20d49aa4c6c5fec2daf0daa070514e013',
   'osenco/mpesa' => 'v1.20.6@2672bbdd994fbb644f9734e71833bf0118c12759',
   'paragonie/random_compat' => 'v9.99.99@84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95',
   'paypal/rest-api-sdk-php' => 'dev-master@1a2ed767bb09374a8a222069930e94fccf99009e',
@@ -147,9 +147,6 @@ final class Versions
   'vonage/client-core' => '2.1.0@ef7e8a0715c93c5ddc7915e8a29f29331798bb52',
   'zendframework/zend-diactoros' => '2.2.1@de5847b068362a88684a55b0dbb40d85986cfa52',
   'beyondcode/laravel-dump-server' => '1.3.0@fcc88fa66895f8c1ff83f6145a5eff5fa2a0739a',
-  'doctrine/cache' => '1.10.2@13e3381b25847283a91948d04640543941309727',
-  'doctrine/dbal' => '2.12.1@adce7a954a1c2f14f85e94aed90c8489af204086',
-  'doctrine/event-manager' => '1.1.1@41370af6a30faa9dc0368c4a6814d596e81aba7f',
   'doctrine/instantiator' => '1.4.0@d56bf6102915de5702778fe20f2de3b2fe570b5b',
   'filp/whoops' => '2.9.1@307fb34a5ab697461ec4c9db865b20ff2fd40771',
   'fzaninotto/faker' => 'v1.9.2@848d8125239d7dbf8ab25cb7f054f1a630e68c2e',
@@ -157,8 +154,6 @@ final class Versions
   'mockery/mockery' => '1.3.3@60fa2f67f6e4d3634bb4a45ff3171fa52215800d',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'nunomaduro/collision' => 'v2.1.1@b5feb0c0d92978ec7169232ce5d70d6da6b29f63',
-  'oscarafdev/laravel-4-generators' => '3.1.9@3ce0f0250e6ceed3d23d8311d144cc0e03f784b1',
-  'oscarafdev/migrations-generator' => '2.0.23@b087636212eede9d2a266278c7277c13057de5cc',
   'phar-io/manifest' => '1.0.3@7761fcacf03b4d4f16e7ccb606d4879ca431fcf4',
   'phar-io/version' => '2.0.1@45a2ec53a73c70ce41d55cedef9063630abaf1b6',
   'phpdocumentor/reflection-common' => '2.2.0@1d01c49d4ed62f25aa84a747ad35d5a16924662b',
@@ -184,7 +179,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'webmozart/assert' => '1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389',
-  'laravel/laravel' => 'dev-main@d88988355a2e9e953cbdecf4785eb2ac176a9360',
+  'laravel/laravel' => 'dev-main@8b5115b0e1c2db204a7a9c22c49166f4fdb27bc5',
 );
 
     private function __construct()

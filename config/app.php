@@ -185,6 +185,7 @@ return [
         /*
          * Application Service Providers...
          */
+        Harimayco\Menu\MenuServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -247,6 +248,7 @@ return [
         'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
         'Str' => Illuminate\Support\Str::class,
         'Rave' => KingFlamez\Rave\Facades\Rave::class,
+        'Menu' => Harimayco\Menu\Facades\Menu::class,
     ],
 
 ];

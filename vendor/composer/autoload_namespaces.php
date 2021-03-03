@@ -6,13 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Way\\Generators' => array($vendorDir . '/oscarafdev/laravel-4-generators/src'),
     'Unirest\\' => array($vendorDir . '/mashape/unirest-php/src'),
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Requests' => array($vendorDir . '/rmccue/requests/library'),
     'PayPal' => array($vendorDir . '/paypal/rest-api-sdk-php/lib'),
-    'OscarAFDev\\MigrationsGenerator' => array($vendorDir . '/oscarafdev/migrations-generator/src'),
-    'Orangehill\\Iseed' => array($vendorDir . '/orangehill/iseed/src'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
     'CinetPay' => array($vendorDir . '/cinetpay/cinetpay-php/src'),

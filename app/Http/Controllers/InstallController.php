@@ -11,6 +11,7 @@ use App\User;
 use App\Product;
 use CoreComponentRepository;
 use App\Http\Helpers\SpotConfigHelper;
+use Artisan;
 class InstallController extends Controller
 {
     public function step0() {
@@ -89,6 +90,7 @@ class InstallController extends Controller
     public function import_sql() {
         $sql_path = base_path('db.sql');
         DB::unprepared(file_get_contents($sql_path));
+        Artisan::call('migrate');
         return redirect('step5');
     }
 

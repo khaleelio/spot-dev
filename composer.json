@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "gabrielbull/ups-api": "^0.8.0",
         "guzzlehttp/guzzle": "^6.5",
+        "harimayco/laravel-menu": "^1.4",
         "instamojo/instamojo-php": "^0.4.0",
         "iyzico/iyzipay-php": "^2.0",
         "kingflamez/laravelrave": "^2.0",
