@@ -91,6 +91,7 @@ class InstallController extends Controller
         $sql_path = base_path('db.sql');
         DB::unprepared(file_get_contents($sql_path));
         Artisan::call('migrate');
+        Artisan::call('db:seed');
         return redirect('step5');
     }
 

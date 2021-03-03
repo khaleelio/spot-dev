@@ -23,27 +23,6 @@
     </div>
 
     <div class="card">
-        <div class="row p-5">
-            <div class="col-lg-6">
-                <h5 class="card-title">{{ translate('Add New Container') }}</h5>
-                <form class="form-inline" action="{{ route('website.container.store') }}" method="POST"
-                    enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="inputPassword2" class="sr-only">{{ translate('Name') }}</label>
-                        <input type="text" class="form-control" id="" placeholder="name" name="name" required>
-                    </div>
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="inputPassword2" class="sr-only">{{ translate('Title') }}</label>
-                        <input type="text" class="form-control" id="" placeholder="title" name="title">
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-2">{{ translate('Save') }}</button>
-                </form>
-            </div>
-            <div class="col-lg-6 text-right">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">{{ translate('Add New Widget') }}</button>
-            </div>
-        </div>
         <div class="parent card-body row">
             <div class="dragula-container ng-isolate-scope col-lg-3 p-3" id="source">
                 @forelse ($widgets as $widget)
