@@ -15,7 +15,13 @@ class CreateAdminWidgetsTable extends Migration
     {
         Schema::create('admin_widgets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
+            $table->string('title')->nullable();
+            $table->longText('value')->nullable();
+            $table->string('link')->nullable();
+            $table->unsignedBigInteger('parent_id')->default(0);
+            // $table->integer('sort')->default(0);
+            $table->string('class')->nullable();
+            // $table->unsignedBigInteger('widget_id')->nullable();
             $table->timestamps();
         });
     }

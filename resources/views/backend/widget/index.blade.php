@@ -25,26 +25,42 @@
     <div class="card">
         <div class="row p-5">
             <div class="col-lg-6">
-                <h5 class="card-title">{{ translate('Add New Widget') }}</h5>
-                <form class="form-inline" action="{{ route('website.widget.store') }}" method="POST"
+                <h5 class="card-title">{{ translate('Add New Container') }}</h5>
+                <form class="form-inline" action="{{ route('website.container.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputPassword2" class="sr-only">{{ translate('Name') }}</label>
+                        <input type="text" class="form-control" id="" placeholder="name" name="name" required>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
                         <label for="inputPassword2" class="sr-only">{{ translate('Title') }}</label>
-                        <input type="text" class="form-control" id="" placeholder="title" name="title" required>
+                        <input type="text" class="form-control" id="" placeholder="title" name="title">
                     </div>
                     <button type="submit" class="btn btn-primary mb-2">{{ translate('Save') }}</button>
                 </form>
             </div>
-            @if (count($widgets) > 0)
-                <div class="col-lg-6 text-right">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">{{ translate('Add New Item') }}</button>
-                </div>
-            @endif
+            <div class="col-lg-6 text-right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">{{ translate('Add New Widget') }}</button>
+            </div>
         </div>
         <div class="parent card-body row">
-            @forelse ($widgets as $widget)
-                @widget('mainWidget',['widget'=>$widget])
+            <div class="dragula-container ng-isolate-scope col-lg-3 p-3" id="source">
+                @forelse ($widgets as $widget)
+                    <div class="widget" id="widget-{{$widget->id}}" data-widget-id="{{$widget->id}}">
+                        <span class="handle">+</span>
+                        <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('website.widget.container.destroy', '')}}" title="{{ translate('Delete') }}" style="display: none">
+                            <i class="las la-trash"></i>
+                        </a>
+                        <h3>{{$widget->title}}</h3>
+                        <div>{!!$widget->value!!}</div>
+                    </div>
+                @empty
+                    
+                @endforelse
+            </div>
+            @forelse ($containers as $container)
+                @widget('mainWidget',['container'=>$container])
             @empty
                 
             @endforelse
@@ -54,7 +70,7 @@
 @endsection
 
 @section('modal')
-    @include('modals.add_widget_item_modal')
+    @include('modals.add_widget_modal')
     @include('modals.delete_modal')
 @endsection
 
@@ -62,32 +78,52 @@
     <script src="{{asset('public/assets/dragula/dragula.js')}}" type="text/javascript"></script>
     <script>
         'use strict';
-        var widgets = [
-            @forelse ($widgets as $widget)
-                document.getElementById('widget-{{$widget->id}}'),
+        var containers = [
+            document.getElementById('source'),
+            @forelse ($containers as $container)
+                document.getElementById('container-{{$container->id}}'),
             @empty
                 
             @endforelse
         ];
 
-        dragula(widgets, {
-            moves: function (el, container, handle) {
-                // console.log(el);
-                // console.log(container);
-                // console.log(handle);
-                return handle.classList.contains('handle');
+        dragula(containers, {
+            copy: function (el, source) {
+                return source.id === 'source';
+            },
+            accepts: function (el, target, source) {
+                return target.id !== 'source';
             }
-        }).on('drop', function (el, container) {
-            var item_devs = container.getElementsByTagName('div');
-            var items_order = [];
-            for (let index = 0; index < item_devs.length; index++) {
-                items_order.push( item_devs[index].dataset.itemId );
-            }
-            // console.log(items_order);
-            // console.log(container.dataset.widgetId);
-            $.post('{{ route('website.widget.item.position') }}', { _token: AIZ.data.csrf, items:items_order, widget_id:container.dataset.widgetId}, function(data){
-                console.log(data);
+        }).on('drop', function (el, container, source) {
+            if(container){
+                var container_devs = container.getElementsByClassName('widget');
+                var container_widgets_order = [];
+                for (let index = 0; index < container_devs.length; index++) {
+                    if(container_devs[index].dataset.containerWidgetId){
+                        container_widgets_order.push(container_devs[index].dataset.containerWidgetId);
+                    }else{
+                        container_widgets_order.push('0');
+                    }
+                }
+                $.ajax({
+                url:'{{ route("website.widget.clone") }}',
+                type:'POST',
+                data:  { _token: AIZ.data.csrf, container_widgets:container_widgets_order, container_id:container.dataset.containerId, widget_id:el.dataset.widgetId, source:source.dataset.containerId},
+                dataTy:'json',
+                success:function(response){
+                    if(source.id == 'source'){
+                        el.dataset.containerWidgetId = response.id;
+                        var btn_delete = el.getElementsByClassName('confirm-delete')[0];
+                        btn_delete.style.display = "";
+                        btn_delete.dataset.href += "/" + response.id + " ";
+                        // console.log(btn_delete);
+                    }
+                },
+                error: function(returnval) {
+                    console.log(returnval);
+                }
             });
+            }
         });
 
     </script>

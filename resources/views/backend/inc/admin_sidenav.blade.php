@@ -96,7 +96,7 @@
                 @endif
 
                 @if(Auth::user()->user_type == 'admin' || in_array('13', json_decode(Auth::user()->staff->role->permissions)))
-                    <li class="menu-item menu-item-submenu   {{ areActiveRoutes(['support_ticket.admin_index','website.header','website.footer','website.pages','website.appearance','website.menu.index','website.widget.index'])}}" aria-haspopup="true" data-menu-toggle="hover">
+                    <li class="menu-item menu-item-submenu   {{ areActiveRoutes(['support_ticket.admin_index','website.header','website.footer','website.pages','website.appearance','website.menu.index','website.container.index'])}}" aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
                             <i class="menu-icon flaticon2-website"></i>
                             <span class="menu-text">{{translate('Website')}}</span>
@@ -150,8 +150,8 @@
                                         <span class="menu-text">{{translate('Menus')}}</span>
                                     </a>
                                 </li>
-                                <li class="menu-item  {{ areActiveRoutes(['website.widget.index'])}}" aria-haspopup="true">
-                                    <a href="{{ route('website.widget.index') }}" class="menu-link">
+                                <li class="menu-item  {{ areActiveRoutes(['website.container.index'])}}" aria-haspopup="true">
+                                    <a href="{{ route('website.container.index') }}" class="menu-link">
                                         <i class="menu-bullet menu-bullet-dot">
                                             <span></span>
                                         </i>

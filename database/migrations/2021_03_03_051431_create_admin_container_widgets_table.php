@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdminWidgetItemsTable extends Migration
+class CreateAdminContainerWidgetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateAdminWidgetItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_widget_items', function (Blueprint $table) {
+        Schema::create('admin_container_widgets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('widget_id')->nullable();
+            $table->unsignedBigInteger('container_id')->nullable();
             $table->string('title');
-            $table->text('body');
+            $table->longText('value')->nullable();
             $table->string('link')->nullable();
-            $table->unsignedBigInteger('parent')->default(0);
             $table->integer('sort')->default(0);
             $table->string('class')->nullable();
-            $table->unsignedBigInteger('widget_id')->nullable();
-            $table->integer('depth')->default(0);
+            $table->unsignedBigInteger('parent_id')->default(0);
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateAdminWidgetItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_widget_items');
+        Schema::dropIfExists('admin_container_widgets');
     }
 }
