@@ -17,6 +17,7 @@ class CreateAdminContainersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullable();
             $table->string('name');
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

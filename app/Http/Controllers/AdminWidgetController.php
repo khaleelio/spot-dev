@@ -9,51 +9,43 @@ use App\AdminWidget;
 
 class AdminWidgetController extends Controller
 {
-    public function store(Request $request)
+    public function store($request)
     {
-        $request->validate([
-            'title' => 'nullable|max:255',
-            'value' => 'nullable|max:294967295',
-            'link' => 'nullable|max:255',
-            // 'sort' => 'nullable|integer',
-            'class' => 'nullable|max:255',
-            // 'container_id' => 'required|exists:admin_containers,id',
-        ]);
-        // $container = AdminContainer::find($request->container_id);
-        // $sort = ($container->item->last()->sort ?? -1) + 1 ;
-
         $widget = new AdminWidget();
-        $widget->title = $request->title;
-        $widget->value = $request->value;
-        $widget->link = $request->link;
-        // $widget->sort = $sort;
-        $widget->class = $request->class;
-        // $widget->widget_id = $request->widget_id;
+        $widget->title = $request['title'];
+        $widget->value = $request['value'];
+        $widget->link = $request['link'];
+        $widget->class = $request['class'];
         $widget->save();
 
-        flash(translate('New widget has been created successfully'))->success();
-        return redirect()->route('website.container.index');
+        // flash(translate('New widget has been created successfully'))->success();
+        return $widget;
     }
 
-    public function update(Request $request)
+    public function update($request)
     {
-        $request->validate([
-            'id' => 'required|exists:admin_widgets,id',
-            'title' => 'nullable|max:255',
-            'value' => 'nullable|max:294967295',
-            'link' => 'nullable|max:255',
-            'class' => 'nullable|max:255',
-        ]);
-        $widget = new AdminWidget();
-        $widget->title = $request->title;
-        $widget->link = $request->link;
-        $widget->sort = $request->sort;
-        $widget->class = $request->class;
-        $widget->widget_id = $request->widget_id;
-        $widget->save();
+        $widget = AdminWidget::find($request['id']);
+        if($widget){
+            $widget->title = $request['title'] ?? $widget->title;
+            $widget->value = $request['value'] ?? $widget->value;
+            $widget->link = $request['link'] ?? $widget->link;
+            $widget->class = $request['class'] ?? $widget->class;
+            $widget->save();
+            return $widget;
+        }else{
+            return translate('Invalid ID');
+        }
+    }
 
-        flash(translate('New widget has been created successfully'))->success();
-        return redirect()->route('website.container.index');
+    public function destroy($id)
+    {
+        $widget = AdminWidget::find($id);
+        if($widget){
+            $widget->delete();
+            return translate('Widget has been deleted successfully');
+        }else{
+            return translate('Invalid ID');
+        }
     }
 
     public function update_container_widget(Request $request)
@@ -112,14 +104,6 @@ class AdminWidgetController extends Controller
         }
         return ['id'=>$new_container_widget_id,'message'=>"Widget has been Added successfully!"];
         
-    }
-
-    public function destroy($id)
-    {
-        $widget = AdminWidget::findOrFail($id);
-        $widget->delete();
-        flash(translate('Widget has been deleted successfully'))->success();
-        return redirect()->back();
     }
 
     public function destroy_container_widget($id)

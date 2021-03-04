@@ -17,31 +17,44 @@ class AdminContainerController extends Controller
         return view('backend.widget.index',['containers'=>$containers,'widgets'=>$widgets]);
     }
 
-    public function store(Request $request)
+    public function store($request)
     {
-        $request->validate([
-            'name' => 'required|min:2|max:255',
-            'title' => 'nullable|max:255',
-        ]);
         $container = new AdminContainer();
-        $container->title = $request->title;
-        $container->name = $request->name;
+        $container->title = $request['title'];
+        $container->name = $request['name'];
+        $container->active = $request['active'] ?? 1;
         $container->save();
 
-        flash(translate('New container has been created successfully'))->success();
-        return redirect()->route('website.container.index');
+        return $container;
+    }
+
+    public function update($request)
+    {
+        $container = AdminContainer::find($request['id']);
+        if($container){
+            $container->title = $request['title'] ?? $container->title;
+            $container->name = $request['name'] ?? $container->name;
+            $container->active = $request['active'] ?? $container->active;
+            $container->save();
+
+            return $container;
+        }else{
+            return translate('Invalid ID');
+        }
     }
 
     public function destroy($id)
     {
-        $container = AdminContainer::findOrFail($id);
-        if(count($container->container_widget) == 0){
-            $container->delete();
+        $container = AdminContainer::find($id);
+        if($container){
+            if(count($container->container_widget) == 0){
+                $container->delete();
+                return translate('Container has been deleted successfully');
+            }else{
+                return translate("You can't delete this container , you have to delete or move all widgets first");
+            }
         }else{
-            flash(translate("You can't delete this container , you have to delete or move all widgets first"))->error();
-            return redirect()->back();
+            return translate('Invalid ID');
         }
-        flash(translate('Container has been deleted successfully'))->success();
-        return redirect()->back();
     }
 }
