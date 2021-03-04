@@ -1,15 +1,15 @@
 <script>
 	var menus = {
 		"oneThemeLocationNoMenus" : "",
-		"moveUp" : "Move up",
-		"moveDown" : "Mover down",
-		"moveToTop" : "Move top",
-		"moveUnder" : "Move under of %s",
-		"moveOutFrom" : "Out from under  %s",
-		"under" : "Under %s",
-		"outFrom" : "Out from %s",
-		"menuFocus" : "%1$s. Element menu %2$d of %3$d.",
-		"subMenuFocus" : "%1$s. Menu of subelement %2$d of %3$s."
+		"moveUp" : "{{translate('Move up')}}",
+		"moveDown" : "{{translate('Mover down')}}",
+		"moveToTop" : "{{translate('Move top')}}",
+		"moveUnder" : "{{translate('Move under of')}} %s",
+		"moveOutFrom" : "{{translate('Out from under')}}  %s",
+		"under" : "{{translate('Under')}} %s",
+		"outFrom" : "{{translate('Out from')}} %s",
+		"menuFocus" : "%1$s. {{translate('Element menu')}} %2$d {{translate('of')}} %3$d.",
+		"subMenuFocus" : "%1$s. {{translate('Menu of subelement')}} %2$d {{translate('of')}} %3$s."
 	};
 	var arraydata = [];     
 	var addcustommenur= '{{ route("haddcustommenu") }}';
