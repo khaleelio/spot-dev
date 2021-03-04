@@ -13,18 +13,22 @@ class WidgetSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 3; $i++) { 
-            $container = new AdminContainer();
-            $container->title = "Container " . ($i+1);
-            $container->name = "Container " . ($i+1);
-            $container->save();   
-        }
+        $container = new AdminContainer();
+        $container->title = "Dashboard";
+        $container->name = "Dashboard";
+        $container->save();
+        // for ($i=0; $i < 3; $i++) { 
+        //     $container = new AdminContainer();
+        //     $container->title = "Container " . ($i+1);
+        //     $container->name = "Container " . ($i+1);
+        //     $container->save();   
+        // }
 
-        for ($i=0; $i < 10; $i++) { 
-            $widget = new AdminWidget();
-            $widget->title = "Widget " . ($i+1);
-            $widget->value = "Widget " . ($i+1);
-            $widget->save();
-        }
+        // for ($i=0; $i < 10; $i++) { 
+        //     $widget = new AdminWidget();
+        //     $widget->title = "Widget " . ($i+1);
+        //     $widget->value = "Widget " . ($i+1);
+        //     $widget->save();
+        // }
     }
 }
