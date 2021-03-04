@@ -56,6 +56,26 @@ class AdminWidgetController extends Controller
         return redirect()->route('website.container.index');
     }
 
+    public function update_container_widget(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|exists:admin_container_widgets,id',
+            'title' => 'nullable|max:255',
+            'value' => 'nullable|max:294967295',
+            'link' => 'nullable|max:255',
+            'class' => 'nullable|max:255',
+        ]);
+        $widget = AdminContainerWidget::find($request->id);
+        $widget->title = $request->title;
+        $widget->value = $request->value;
+        $widget->link = $request->link;
+        $widget->class = $request->class;
+        $widget->save();
+
+        flash(translate('New widget has been updated successfully'))->success();
+        return redirect()->route('website.container.index');
+    }
+
     public function clone(Request $request)
     {
         $request->validate([

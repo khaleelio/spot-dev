@@ -12,7 +12,7 @@ class MainWidget extends AbstractWidget
      * @var array
      */
     protected $config = [
-        'widget'=> ''
+        'container_widget'=> ''
     ];
 
     /**

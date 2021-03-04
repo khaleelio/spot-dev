@@ -78,6 +78,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 		Route::post('/widget/store', 'AdminWidgetController@store')->name('website.widget.store');
 		Route::post('/widget/clone', 'AdminWidgetController@clone')->name('website.widget.clone');
 		Route::get('/widget/destroy/{id}', 'AdminWidgetController@destroy')->name('website.widget.destroy');
+		Route::post('/widget/container/update', 'AdminWidgetController@update_container_widget')->name('website.widget.container.update');
 		Route::get('/widget/container/destroy/{id}', 'AdminWidgetController@destroy_container_widget')->name('website.widget.container.destroy');
 		Route::resource('custom-pages', 'PageController');
 		Route::get('/custom-pages/edit/{id}', 'PageController@edit')->name('custom-pages.edit');
