@@ -21,12 +21,6 @@
     filter: alpha(opacity=20);
 }
 
-.parent {
-    background-color: rgba(255, 255, 255, 0.2);
-    margin: 50px 0;
-    padding: 20px;
-  }
-  
   
   .gh-fork {
     position: fixed;
@@ -40,15 +34,6 @@
     display: table;
   }
   
-  .dragula-container:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  .dragula-container div {
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease-in-out;
-  }
   .dragula-container .ex-moved {
     background-color: #e74c3c;
   }
