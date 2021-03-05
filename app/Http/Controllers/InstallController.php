@@ -9,7 +9,7 @@ use Hash;
 use App\BusinessSetting;
 use App\User;
 use App\Product;
-use CoreComponentRepository;
+use SpotlayerCheck;
 use App\Http\Helpers\SpotConfigHelper;
 use Artisan;
 class InstallController extends Controller
@@ -31,7 +31,7 @@ class InstallController extends Controller
     }
 
     public function step3($error = "") {
-        CoreComponentRepository::instantiateShopRepository();
+        SpotlayerCheck::instantiateShopRepository();
         if($error == ""){
             return view('installation.step3');
         }else {

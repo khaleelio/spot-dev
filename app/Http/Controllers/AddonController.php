@@ -10,7 +10,7 @@ use DB;
 use Auth;
 use App\BusinessSetting;
 use App\Http\Helpers\SpotConfigHelper;
-use CoreComponentRepository;
+use SpotlayerCheck;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 use Storage;
@@ -24,7 +24,7 @@ class AddonController extends Controller
      */
     public function index()
     {
-        CoreComponentRepository::instantiateShopRepository();
+        SpotlayerCheck::instantiateShopRepository();
         return view('backend.addons.index');
     }
 

@@ -172,7 +172,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
-        MehediIitdu\CoreComponentRepository\CoreComponentRepositoryServiceProvider::class,
+        Aldmohy\SpotlayerCheck\SpotlayerCheckServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,

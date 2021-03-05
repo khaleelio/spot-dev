@@ -3250,18 +3250,18 @@
             "install-path": "../mashape/unirest-php"
         },
         {
-            "name": "mehedi-iitdu/core-component-repository",
+            "name": "aldmohy/spotlayer-check",
             "version": "dev-master",
             "version_normalized": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mehedi-iitdu/core-component-repository.git",
-                "reference": "0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f"
+                "url": "https://github.com/aldmohy/spotlayer-check.git",
+                "reference": "14a9ac95b8b17cce62f5a96f5a204f8bd706d014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mehedi-iitdu/core-component-repository/zipball/0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f",
-                "reference": "0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f",
+                "url": "https://api.github.com/repos/aldmohy/spotlayer-check/zipball/14a9ac95b8b17cce62f5a96f5a204f8bd706d014",
+                "reference": "14a9ac95b8b17cce62f5a96f5a204f8bd706d014",
                 "shasum": ""
             },
             "require": {
@@ -3281,17 +3281,17 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "MehediIitdu\\CoreComponentRepository\\CoreComponentRepositoryServiceProvider"
+                        "Aldmohy\\SpotlayerCheck\\SpotlayerCheckServiceProvider"
                     ],
                     "aliases": {
-                        "CoreComponentRepository": "MehediIitdu\\CoreComponentRepository\\CoreComponentRepositoryFacade"
+                        "SpotlayerCheck": "Aldmohy\\SpotlayerCheck\\SpotlayerCheckFacade"
                     }
                 }
             },
             "installation-source": "source",
             "autoload": {
                 "psr-4": {
-                    "MehediIitdu\\CoreComponentRepository\\": "src"
+                    "Aldmohy\\SpotlayerCheck\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3300,18 +3300,18 @@
             ],
             "authors": [
                 {
-                    "name": "Mehedi Hasan",
-                    "email": "bsse0607@iit.du.ac.bd",
+                    "name": "Aldmohy",
+                    "email": "eng.aldmohy@gmail.com",
                     "role": "Developer"
                 }
             ],
             "description": "My awesome package",
-            "homepage": "https://github.com/mehedi-iitdu/core-component-repository",
+            "homepage": "https://github.com/aldmohy/spotlayer-check",
             "keywords": [
-                "core-component-repository",
-                "mehedi-iitdu"
+                "spotlayer-check",
+                "aldmohy"
             ],
-            "install-path": "../mehedi-iitdu/core-component-repository"
+            "install-path": "../aldmohy/spotlayer-check"
         },
         {
             "name": "mehedi-iitdu/paypal",

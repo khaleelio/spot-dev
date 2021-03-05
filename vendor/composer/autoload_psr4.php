@@ -71,7 +71,6 @@ return array(
     'Netshell\\Paypal\\' => array($vendorDir . '/mehedi-iitdu/paypal/src'),
     'MyCLabs\\Enum\\' => array($vendorDir . '/myclabs/php-enum/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'MehediIitdu\\CoreComponentRepository\\' => array($vendorDir . '/mehedi-iitdu/core-component-repository/src'),
     'Matrix\\' => array($vendorDir . '/markbaker/matrix/classes/src'),
     'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
     'League\\OAuth2\\Server\\' => array($vendorDir . '/league/oauth2-server/src'),
@@ -119,5 +118,6 @@ return array(
     'Arrilot\\Widgets\\' => array($vendorDir . '/arrilot/laravel-widgets/src'),
     'App\\' => array($baseDir . '/app'),
     'Anand\\LaravelPaytmWallet\\' => array($vendorDir . '/anandsiddharth/laravel-paytm-wallet/src'),
+    'Aldmohy\\SpotlayerCheck\\' => array($vendorDir . '/aldmohy/spotlayer-check/src'),
     '' => array($vendorDir . '/iyzico/iyzipay-php/src'),
 );

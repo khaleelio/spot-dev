@@ -683,14 +683,14 @@
       ),
       'reference' => '842c0f242dfaaf85f16b72e217bf7f7c19ab12cb',
     ),
-    'mehedi-iitdu/core-component-repository' => 
+    'aldmohy/spotlayer-check' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f',
+      'reference' => '14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
     ),
     'mehedi-iitdu/paypal' => 
     array (

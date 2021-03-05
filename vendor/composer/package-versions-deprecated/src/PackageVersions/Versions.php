@@ -76,7 +76,7 @@ final class Versions
   'markbaker/complex' => '2.0.0@9999f1432fae467bc93c53f357105b4c31bb994c',
   'markbaker/matrix' => '2.0.0@9567d9c4c519fbe40de01dbd1e4469dbbb66f46a',
   'mashape/unirest-php' => 'v3.0.4@842c0f242dfaaf85f16b72e217bf7f7c19ab12cb',
-  'mehedi-iitdu/core-component-repository' => 'dev-master@0d257c28ad1fc67b2f03a10df648a4ecb8c9e23f',
+  'aldmohy/spotlayer-check' => 'dev-main@14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
   'mehedi-iitdu/paypal' => 'dev-master@14130fa885065b18f1464524b0d6591df90d8e71',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'mtdowling/jmespath.php' => '2.6.0@42dae2cbd13154083ca6d70099692fef8ca84bfb',
@@ -180,7 +180,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'webmozart/assert' => '1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389',
-  'laravel/laravel' => 'dev-main@f0c9a61bc37db0a155c8f37bbbb7f287a2574129',
+  'laravel/laravel' => 'dev-main@a953c7780916f9a9f4ac620d557d0b7b3e83632e',
 );
 
     private function __construct()

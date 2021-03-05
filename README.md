@@ -1,1 +1,1 @@
-A complete solution for E-commerce Business with exclusive features & super responsive layout
+For the new update please use "composer clearcache; then composer dump -o "
