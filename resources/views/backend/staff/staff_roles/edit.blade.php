@@ -1,121 +1,136 @@
 @extends('backend.layouts.app')
 
+@section('subheader')
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">{{ translate('Edit Role Information') }} ({{ $role->getTranslation('name', $lang) }})</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('admin.dashboard')}}" class="text-muted">{{translate('Dashboard')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('roles.index')}}" class="text-muted">{{ translate('Roles')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="#" class="text-muted">{{ translate('Edit Role Information') }} ({{ $role->getTranslation('name', $lang) }})</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+@endsection
+
 @section('content')
-<div class="aiz-titlebar text-left mt-2 mb-3">
-    <h5 class="mb-0 h6">{{translate('Role Information')}}</h5>
-</div>
 
+<div class="row">
+    <div class="col-md-12 mx-auto">
 
-<div class="col-lg-7 mx-auto">
-    <div class="card">
-        <div class="card-body p-0">
-            <ul class="nav nav-tabs nav-fill border-light">
-      				@foreach (\App\Language::all() as $key => $language)
-      					<li class="nav-item">
-      						<a class="nav-link text-reset @if ($language->code == $lang) active @else bg-soft-dark border-light border-left-0 @endif py-3" href="{{ route('roles.edit', ['id'=>$role->id, 'lang'=> $language->code] ) }}">
-      							<img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
-      							<span>{{$language->name}}</span>
-      						</a>
-      					</li>
-    	            @endforeach
-      			</ul>
-            <form class="p-4" action="{{ route('roles.update', $role->id) }}" method="POST">
+		<!--begin::Card-->
+		<div class="card card-custom gutter-b example example-compact">
+			<div class="card-header card-header-tabs-line">
+				<div class="card-title">
+					<h3 class="card-label">{{ translate('Edit Role Information') }} ({{ $role->getTranslation('name', $lang) }})</h3>
+				</div>
+				<div class="card-toolbar">
+					<ul class="nav nav-tabs nav-bold nav-tabs-line">
+						
+						@foreach (\App\Language::all() as $key => $language)
+							<li class="nav-item">
+								<a class="nav-link @if ($language->code == $lang) active @endif" href="{{ route('roles.edit', ['id'=>$role->id, 'lang'=> $language->code] ) }}" href="#kt_tab_pane_1_3">
+									<span class="nav-icon">
+										<img src="{{ static_asset('assets/img/flags/'.$language->code.'.png') }}" height="11" class="mr-1">
+									</span>
+									<span class="nav-text">{{$language->name}}</span>
+								</a>
+							</li>
+						@endforeach
+					</ul>
+				</div>
+			</div>
+
+			<form class="form" action="{{ route('roles.update', $role->id) }}" id="kt_form_1" method="POST" enctype="multipart/form-data">
                 <input name="_method" type="hidden" value="PATCH">
                 <input type="hidden" name="lang" value="{{ $lang }}">
-            	   @csrf
-                <div class="form-group row">
-                    <label class="col-md-3 col-from-label" for="name">{{translate('Name')}} <i class="las la-language text-danger" title="{{translate('Translatable')}}"></i></label>
-                    <div class="col-md-9">
-                        <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" class="form-control" value="{{ $role->getTranslation('name', $lang) }}" required>
-                    </div>
-                </div>
-                <div class="card-header">
-                    <h5 class="mb-0 h6">{{ translate('Permissions') }}</h5>
-                </div>
-                <br>
-                @php
-                    $permissions = json_decode($role->permissions);
-                @endphp
-                <div class="form-group row">
-                    <label class="col-md-2 col-from-label" for="banner"></label>
-                    <div class="col-md-8">
-                        @foreach(\File::files(base_path('resources/views/backend/permissions/')) as $path)
-                            @include('backend.permissions.'.str_replace('.blade','',pathinfo($path)['filename']))
-                        @endforeach
-                        
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Reports') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="10" @php if(in_array(10, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Support') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="12" @php if(in_array(12, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Website Setup') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="13" @php if(in_array(13, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Setup & Configurations') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="14" @php if(in_array(14, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Staffs') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="20" @php if(in_array(20, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Addon Manager') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="21" @php if(in_array(21, $permissions)) echo "checked"; @endphp>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
+                @csrf
+				<div class="card-body">
+                    <div class="form-group">
+                        <label>{{translate('Name')}} <span class="text-danger">*</span></label>
+                        <div class="input-group input-group-solid">
+                            <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" class="form-control" value="{{ $role->getTranslation('name', $lang) }}" required>
                         </div>
                     </div>
+
+                    <div class="card card-custom gutter-b example example-compact">
+                        <div class="card-header card-header-tabs-line">
+                            <div class="card-title">
+                                <h3 class="card-label">{{ translate('Permissions') }}</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @php
+                                $permissions = json_decode($role->permissions);
+                            @endphp
+                            <div class="form-group row">
+                                <div class="col-sm-12 checkbox-list">
+
+                                    @foreach(\File::files(base_path('resources/views/backend/permissions/')) as $path)
+                                        @include('backend.permissions.'.str_replace('.blade','',pathinfo($path)['filename']))
+                                    @endforeach
+                                    
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="10" @php if(in_array(10, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Reports') }}
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="12" @php if(in_array(12, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Support') }}
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="13" @php if(in_array(13, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Website Setup') }}
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="14" @php if(in_array(14, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Setup & Configurations') }}
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="20" @php if(in_array(20, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Staffs') }}
+                                    </label>
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="permissions[]" value="21" @php if(in_array(21, $permissions)) echo "checked"; @endphp />
+                                        <span></span>{{ translate('Addon Manager') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="form-group mb-0 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary">{{translate('Save')}}</button>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary mr-2">{{translate('Update')}}</button>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 

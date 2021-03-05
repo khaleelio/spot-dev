@@ -1,105 +1,116 @@
 @extends('backend.layouts.app')
 
+@section('subheader')
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">{{ translate('Add Role') }}</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('admin.dashboard')}}" class="text-muted">{{translate('Dashboard')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('roles.index')}}" class="text-muted">{{ translate('Roles')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="#" class="text-muted">{{ translate('Add Role') }}</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+@endsection
+
 @section('content')
 
-<div class="col-lg-7 mx-auto">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0 h6">{{translate('Role Information')}}</h5>
-        </div>
-        <form action="{{ route('roles.store') }}" method="POST">
-            @csrf
-            <div class="card-body">
-                <div class="form-group row">
-                    <label class="col-md-3 col-from-label" for="name">{{translate('Name')}}</label>
-                    <div class="col-md-9">
-                        <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" class="form-control" required>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-md-12 mx-auto">
+
+            <!--begin::Card-->
+            <div class="card card-custom gutter-b example example-compact">
                 <div class="card-header">
-                    <h5 class="mb-0 h6">{{ translate('Permissions') }}</h5>
-                </div>
-                <br>
-                <div class="form-group row">
-                    <label class="col-md-2 col-from-label"></label>
-                    <div class="col-md-8">
-                        @foreach(\File::files(base_path('resources/views/backend/permissions/')) as $path)
-                            @include('backend.permissions.'.str_replace('.blade','',pathinfo($path)['filename']))
-                        @endforeach
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Reports') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="10">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Support') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="12">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Website Setup') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="13">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Setup & Configurations') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="14">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Staffs') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="20">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label class="col-from-label">{{ translate('Addon Manager') }}</label>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="aiz-switch aiz-switch-success mb-0">
-                                    <input type="checkbox" name="permissions[]" class="form-control demo-sw" value="21">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </div>
+                    <div class="card-title">
+                        <h3 class="card-label">{{ translate('Add Role') }}</h3>
                     </div>
                 </div>
-                <div class="form-group mb-0 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary">{{translate('Save')}}</button>
-                </div>
+
+                <form class="form" action="{{ route('roles.store') }}" id="kt_form_1" method="POST" enctype="multipart/form-data">
+                    <input name="_method" type="hidden" value="PATCH">
+                    @csrf
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>{{translate('Name')}} <span class="text-danger">*</span></label>
+                            <div class="input-group input-group-solid">
+                                <input type="text" placeholder="{{translate('Name')}}" id="name" name="name" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="card card-custom gutter-b example example-compact">
+                            <div class="card-header card-header-tabs-line">
+                                <div class="card-title">
+                                    <h3 class="card-label">{{ translate('Permissions') }}</h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <div class="col-sm-12 checkbox-list">
+                                        @foreach(\File::files(base_path('resources/views/backend/permissions/')) as $path)
+                                            @include('backend.permissions.'.str_replace('.blade','',pathinfo($path)['filename']))
+                                        @endforeach
+
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="10" />
+                                            <span></span>{{ translate('Reports') }}
+                                        </label>
+                                        
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="12" />
+                                            <span></span>{{ translate('Support') }}
+                                        </label>
+                                        
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="13" />
+                                            <span></span>{{ translate('Website Setup') }}
+                                        </label>
+                                        
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="14" />
+                                            <span></span>{{ translate('Setup & Configurations') }}
+                                        </label>
+                                        
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="20" />
+                                            <span></span>{{ translate('Staffs') }}
+                                        </label>
+                                        
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="permissions[]" value="21" />
+                                            <span></span>{{ translate('Addon Manager') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary mr-2">{{translate('Save')}}</button>
+                    </div>
+                </form>
             </div>
-        </from>
+        </div>
     </div>
-</div>
 
 @endsection
