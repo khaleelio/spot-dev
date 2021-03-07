@@ -8,6 +8,6 @@ class MenuController extends Controller
 {
     public function index()
     {
-        return view('backend.menu.index');
+        return view('backend.website_settings.menu.index');
     }
 }
