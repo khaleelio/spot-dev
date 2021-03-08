@@ -57,4 +57,10 @@ class AdminContainerController extends Controller
             return translate('Invalid ID');
         }
     }
+
+    public function get_by_name($name)
+    {
+        $container = AdminContainer::where('name',$name)->get();
+        return $container;
+    }
 }

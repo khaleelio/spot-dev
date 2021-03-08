@@ -36,6 +36,14 @@ Container
         4- How to use
             $result = app('App\Http\Controllers\AdminContainerController')->destroy($id);
 
+    -Get Container by name:
+        1- Method parameters:
+            1- name (string) Required
+        2- Location $result = app('App\Http\Controllers\AdminContainerController')->get_by_name($name);
+        3- Return :
+            1- array of containers
+        4- How to use
+            $result = app('App\Http\Controllers\AdminContainerController')->get_by_name($name);
 
 
 Widget
