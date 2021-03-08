@@ -33,6 +33,7 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
+  'aldmohy/spotlayer-check' => 'dev-main@14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
   'anandsiddharth/laravel-paytm-wallet' => 'v1.0.16@5cf4c586e9b40cf01d8b9bc35e67f8d932318d4b',
   'arrilot/laravel-widgets' => '3.13.1@ae0e44ce625026ae71c6ab9259f89f13af227e37',
   'aws/aws-sdk-php' => '3.171.8@1f7f7c1db844f6c988c93008f902b352c7616da8',
@@ -46,6 +47,7 @@ final class Versions
   'dompdf/dompdf' => 'v0.8.6@db91d81866c69a42dad1d2926f61515a1e3f42c5',
   'dragonmantank/cron-expression' => 'v2.3.1@65b2d8ee1f10915efb3b55597da3404f096acba2',
   'egulias/email-validator' => '2.1.25@0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+  'facade/ignition-contracts' => '1.0.2@3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
   'fideloper/proxy' => '4.4.1@c073b2bd04d1c90e04dc1b787662b558dd65ade0',
   'firebase/php-jwt' => 'v5.2.0@feb0e820b8436873675fd3aca04f3728eb2185cb',
   'gabrielbull/ups-api' => '0.8.0@cb633b84d5437683e286c7df34dc8e4ae254a297',
@@ -76,7 +78,6 @@ final class Versions
   'markbaker/complex' => '2.0.0@9999f1432fae467bc93c53f357105b4c31bb994c',
   'markbaker/matrix' => '2.0.0@9567d9c4c519fbe40de01dbd1e4469dbbb66f46a',
   'mashape/unirest-php' => 'v3.0.4@842c0f242dfaaf85f16b72e217bf7f7c19ab12cb',
-  'aldmohy/spotlayer-check' => 'dev-main@14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
   'mehedi-iitdu/paypal' => 'dev-master@14130fa885065b18f1464524b0d6591df90d8e71',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'mtdowling/jmespath.php' => '2.6.0@42dae2cbd13154083ca6d70099692fef8ca84bfb',
@@ -103,6 +104,7 @@ final class Versions
   'psr/log' => '1.1.3@0f73288fd15629204f9d42b7055f72dacbe811fc',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
   'psy/psysh' => 'v0.9.12@90da7f37568aee36b116a030c5f99c915267edd4',
+  'qirolab/laravel-themer' => '1.4.4@926f1fbcf17465575c976b5775ff186e69a6e85b',
   'ralouphie/getallheaders' => '3.0.3@120b605dfeb996808c31b6477290a714d356e822',
   'ramsey/uuid' => '3.9.3@7e1633a6964b48589b142d60542f9ed31bd37a92',
   'razorpay/razorpay' => '2.0.0@e3cfbcf484ceba1e0f896114fa5b84e8145a311c',
@@ -180,7 +182,7 @@ final class Versions
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'webmozart/assert' => '1.9.1@bafc69caeb4d49c39fd0779086c03a3738cbb389',
-  'laravel/laravel' => 'dev-main@a953c7780916f9a9f4ac620d557d0b7b3e83632e',
+  'laravel/laravel' => 'dev-main@bc7d407e232e95b95a329a566c6203b2f578895b',
 );
 
     private function __construct()

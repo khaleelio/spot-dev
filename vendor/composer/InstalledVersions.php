@@ -29,11 +29,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '9d563dcbefafa8f530f561eaeb1c4ab36c88a161',
+    'reference' => 'bc7d407e232e95b95a329a566c6203b2f578895b',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'aldmohy/spotlayer-check' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
+    ),
     'anandsiddharth/laravel-paytm-wallet' => 
     array (
       'pretty_version' => 'v1.0.16',
@@ -182,6 +191,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'facade/ignition-contracts' => 
+    array (
+      'pretty_version' => '1.0.2',
+      'version' => '1.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
     ),
     'fideloper/proxy' => 
     array (
@@ -546,7 +564,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '9d563dcbefafa8f530f561eaeb1c4ab36c88a161',
+      'reference' => 'bc7d407e232e95b95a329a566c6203b2f578895b',
     ),
     'laravel/passport' => 
     array (
@@ -705,15 +723,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '842c0f242dfaaf85f16b72e217bf7f7c19ab12cb',
-    ),
-    'aldmohy/spotlayer-check' => 
-    array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '14a9ac95b8b17cce62f5a96f5a204f8bd706d014',
     ),
     'mehedi-iitdu/paypal' => 
     array (
@@ -1144,6 +1153,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '90da7f37568aee36b116a030c5f99c915267edd4',
+    ),
+    'qirolab/laravel-themer' => 
+    array (
+      'pretty_version' => '1.4.4',
+      'version' => '1.4.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '926f1fbcf17465575c976b5775ff186e69a6e85b',
     ),
     'ralouphie/getallheaders' => 
     array (
