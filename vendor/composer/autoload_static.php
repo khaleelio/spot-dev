@@ -825,6 +825,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
     );
 
     public static $classMap = array (
+        'AdminThemeSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminThemeSeeder.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheck' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheck.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheckFacade' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheckFacade.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheckServiceProvider' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheckServiceProvider.php',
@@ -844,6 +845,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Addon' => __DIR__ . '/../..' . '/app/Addon.php',
         'App\\AdminContainer' => __DIR__ . '/../..' . '/app/AdminContainer.php',
         'App\\AdminContainerWidget' => __DIR__ . '/../..' . '/app/AdminContainerWidget.php',
+        'App\\AdminTheme' => __DIR__ . '/../..' . '/app/AdminTheme.php',
         'App\\AdminWidget' => __DIR__ . '/../..' . '/app/AdminWidget.php',
         'App\\BusinessSetting' => __DIR__ . '/../..' . '/app/BusinessSetting.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -902,6 +904,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Http\\Middleware\\IsUser' => __DIR__ . '/../..' . '/app/Http/Middleware/IsUser.php',
         'App\\Http\\Middleware\\Language' => __DIR__ . '/../..' . '/app/Http/Middleware/Language.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\ThemeChanger' => __DIR__ . '/../..' . '/app/Http/Middleware/ThemeChanger.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\UserMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/UserMiddleware.php',

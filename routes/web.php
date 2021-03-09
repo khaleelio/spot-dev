@@ -50,7 +50,10 @@ Route::post('/subsubcategories/get_brands_by_subsubcategory', 'SubSubCategoryCon
 Route::post('/subsubcategories/get_attributes_by_subsubcategory', 'SubSubCategoryController@get_attributes_by_subsubcategory')->name('subsubcategories.get_attributes_by_subsubcategory');
 
 //Home Page
-Route::get('/', 'HomeController@index')->name('home');
+Route::group(['middleware'=>'ThemeChanger'], function() {
+    // "admin-theme" will be applied to all routes defined here
+    Route::get('/', 'HomeController@index')->name('home');
+});
 
 Route::get('/sitemap.xml', function(){
 	return base_path('sitemap.xml');

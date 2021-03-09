@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminThemeSeeder' => $baseDir . '/database/seeds/AdminThemeSeeder.php',
     'Aldmohy\\SpotlayerCheck\\SpotlayerCheck' => $vendorDir . '/aldmohy/spotlayer-check/src/SpotlayerCheck.php',
     'Aldmohy\\SpotlayerCheck\\SpotlayerCheckFacade' => $vendorDir . '/aldmohy/spotlayer-check/src/SpotlayerCheckFacade.php',
     'Aldmohy\\SpotlayerCheck\\SpotlayerCheckServiceProvider' => $vendorDir . '/aldmohy/spotlayer-check/src/SpotlayerCheckServiceProvider.php',
@@ -25,6 +26,7 @@ return array(
     'App\\Addon' => $baseDir . '/app/Addon.php',
     'App\\AdminContainer' => $baseDir . '/app/AdminContainer.php',
     'App\\AdminContainerWidget' => $baseDir . '/app/AdminContainerWidget.php',
+    'App\\AdminTheme' => $baseDir . '/app/AdminTheme.php',
     'App\\AdminWidget' => $baseDir . '/app/AdminWidget.php',
     'App\\BusinessSetting' => $baseDir . '/app/BusinessSetting.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -83,6 +85,7 @@ return array(
     'App\\Http\\Middleware\\IsUser' => $baseDir . '/app/Http/Middleware/IsUser.php',
     'App\\Http\\Middleware\\Language' => $baseDir . '/app/Http/Middleware/Language.php',
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+    'App\\Http\\Middleware\\ThemeChanger' => $baseDir . '/app/Http/Middleware/ThemeChanger.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\UserMiddleware' => $baseDir . '/app/Http/Middleware/UserMiddleware.php',
