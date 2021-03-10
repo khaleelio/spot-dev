@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'bc7d407e232e95b95a329a566c6203b2f578895b',
+    'reference' => 'fef6ec00c2b6455992a71aac27212e27f9031d05',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -564,7 +564,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'bc7d407e232e95b95a329a566c6203b2f578895b',
+      'reference' => 'fef6ec00c2b6455992a71aac27212e27f9031d05',
     ),
     'laravel/passport' => 
     array (
@@ -1153,6 +1153,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '90da7f37568aee36b116a030c5f99c915267edd4',
+    ),
+    'qcod/laravel-app-settings' => 
+    array (
+      'pretty_version' => '1.4.0',
+      'version' => '1.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2f8c0874e6072ff718da63f82d5c2071fe11f1e9',
+    ),
+    'qcod/laravel-settings' => 
+    array (
+      'pretty_version' => '1.0.9',
+      'version' => '1.0.9.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '09a6d8a0457038e2d672ab57ed54e459103ba1f1',
     ),
     'qirolab/laravel-themer' => 
     array (

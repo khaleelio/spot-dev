@@ -23,6 +23,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -31,7 +32,6 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         '0b0974a5566a1077e4f2e111341112c1' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
@@ -97,10 +97,12 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '98d15107539f263950011af925f9c349' => __DIR__ . '/..' . '/qcod/laravel-settings/src/helpers.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
         'e23faeee409e941dc9b4c80386209c39' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/functions.php',
         'cd5ab45839da537cf654aad76f602f48' => __DIR__ . '/..' . '/osenco/mpesa/src/helpers.php',
         'bab4ed692c1fd3872849227e2a85791e' => __DIR__ . '/..' . '/unicodeveloper/laravel-paystack/src/Support/helpers.php',
+        'b8f016a5e1054c944175a1c164ac147a' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/helpers.php',
         '559dba61bcaafa74db6aa5e7e8759117' => __DIR__ . '/../..' . '/app/Http/Helpers.php',
     );
 
@@ -179,6 +181,8 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         array (
             'Qirolab\\Theme\\Database\\Factories\\' => 33,
             'Qirolab\\Theme\\' => 14,
+            'QCod\\Settings\\' => 14,
+            'QCod\\AppSettings\\' => 17,
         ),
         'P' => 
         array (
@@ -492,6 +496,14 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'Qirolab\\Theme\\' => 
         array (
             0 => __DIR__ . '/..' . '/qirolab/laravel-themer/src',
+        ),
+        'QCod\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qcod/laravel-settings/src',
+        ),
+        'QCod\\AppSettings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/qcod/laravel-app-settings/src',
         ),
         'Psy\\' => 
         array (
@@ -825,6 +837,8 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
     );
 
     public static $classMap = array (
+        'AddGroupColumnOnSettingsTable' => __DIR__ . '/..' . '/qcod/laravel-settings/src/migrations/2014_10_00_000001_add_group_column_on_settings_table.php',
+        'AdminThemeSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminThemeSeeder.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheck' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheck.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheckFacade' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheckFacade.php',
         'Aldmohy\\SpotlayerCheck\\SpotlayerCheckServiceProvider' => __DIR__ . '/..' . '/aldmohy/spotlayer-check/src/SpotlayerCheckServiceProvider.php',
@@ -844,6 +858,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Addon' => __DIR__ . '/../..' . '/app/Addon.php',
         'App\\AdminContainer' => __DIR__ . '/../..' . '/app/AdminContainer.php',
         'App\\AdminContainerWidget' => __DIR__ . '/../..' . '/app/AdminContainerWidget.php',
+        'App\\AdminTheme' => __DIR__ . '/../..' . '/app/AdminTheme.php',
         'App\\AdminWidget' => __DIR__ . '/../..' . '/app/AdminWidget.php',
         'App\\BusinessSetting' => __DIR__ . '/../..' . '/app/BusinessSetting.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -851,6 +866,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AddonController' => __DIR__ . '/../..' . '/app/Http/Controllers/AddonController.php',
         'App\\Http\\Controllers\\AdminContainerController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminContainerController.php',
+        'App\\Http\\Controllers\\AdminThemeController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminThemeController.php',
         'App\\Http\\Controllers\\AdminWidgetController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminWidgetController.php',
         'App\\Http\\Controllers\\AizUploadController' => __DIR__ . '/../..' . '/app/Http/Controllers/AizUploadController.php',
         'App\\Http\\Controllers\\Api\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/AuthController.php',
@@ -902,6 +918,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'App\\Http\\Middleware\\IsUser' => __DIR__ . '/../..' . '/app/Http/Middleware/IsUser.php',
         'App\\Http\\Middleware\\Language' => __DIR__ . '/../..' . '/app/Http/Middleware/Language.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
+        'App\\Http\\Middleware\\ThemeChanger' => __DIR__ . '/../..' . '/app/Http/Middleware/ThemeChanger.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\UserMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/UserMiddleware.php',
@@ -1827,6 +1844,7 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'Complex\\Complex' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Complex.php',
         'Complex\\Exception' => __DIR__ . '/..' . '/markbaker/complex/classes/src/Exception.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'CreateSettingsTable' => __DIR__ . '/..' . '/qcod/laravel-settings/src/migrations/2014_10_00_000000_create_settings_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -6243,6 +6261,16 @@ class ComposerStaticInit4173f608c2fcca58c487072685519c7d
         'Psy\\VersionUpdater\\GitHubChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/GitHubChecker.php',
         'Psy\\VersionUpdater\\IntervalChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/IntervalChecker.php',
         'Psy\\VersionUpdater\\NoopChecker' => __DIR__ . '/..' . '/psy/psysh/src/VersionUpdater/NoopChecker.php',
+        'QCod\\AppSettings\\AppSettingsServiceProvider' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/AppSettingsServiceProvider.php',
+        'QCod\\AppSettings\\Controllers\\AppSettingController' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/Controllers/AppSettingController.php',
+        'QCod\\AppSettings\\Facade' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/Facade.php',
+        'QCod\\AppSettings\\SavesSettings' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/SavesSettings.php',
+        'QCod\\AppSettings\\Setting\\AppSettings' => __DIR__ . '/..' . '/qcod/laravel-app-settings/src/Setting/AppSettings.php',
+        'QCod\\Settings\\Facade' => __DIR__ . '/..' . '/qcod/laravel-settings/src/Facade.php',
+        'QCod\\Settings\\Setting\\Setting' => __DIR__ . '/..' . '/qcod/laravel-settings/src/Setting/Setting.php',
+        'QCod\\Settings\\Setting\\SettingEloquentStorage' => __DIR__ . '/..' . '/qcod/laravel-settings/src/Setting/SettingEloquentStorage.php',
+        'QCod\\Settings\\Setting\\SettingStorage' => __DIR__ . '/..' . '/qcod/laravel-settings/src/Setting/SettingStorage.php',
+        'QCod\\Settings\\SettingsServiceProvider' => __DIR__ . '/..' . '/qcod/laravel-settings/src/SettingsServiceProvider.php',
         'Qirolab\\Theme\\Commands\\MakeThemeCommand' => __DIR__ . '/..' . '/qirolab/laravel-themer/src/Commands/MakeThemeCommand.php',
         'Qirolab\\Theme\\Exceptions\\ThemeBasePathNotDefined' => __DIR__ . '/..' . '/qirolab/laravel-themer/src/Exceptions/ThemeBasePathNotDefined.php',
         'Qirolab\\Theme\\Middleware\\ThemeMiddleware' => __DIR__ . '/..' . '/qirolab/laravel-themer/src/Middleware/ThemeMiddleware.php',

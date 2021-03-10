@@ -191,7 +191,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        QCod\AppSettings\AppSettingsServiceProvider::class,
     ],
 
     /*
@@ -249,6 +249,8 @@ return [
         'Str' => Illuminate\Support\Str::class,
         'Rave' => KingFlamez\Rave\Facades\Rave::class,
         'Menu' => Harimayco\Menu\Facades\Menu::class,
+        "AppSettings" => QCod\AppSettings\Facade::class,
+        'Arr' => Illuminate\Support\Arr::class,
     ],
 
 ];

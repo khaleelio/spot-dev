@@ -80,6 +80,8 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 		Route::get('/widget/destroy/{id}', 'AdminWidgetController@destroy')->name('website.widget.destroy');
 		Route::post('/widget/container/update', 'AdminWidgetController@update_container_widget')->name('website.widget.container.update');
 		Route::get('/widget/container/destroy/{id}', 'AdminWidgetController@destroy_container_widget')->name('website.widget.container.destroy');
+		Route::get('/theme', 'AdminThemeController@index')->name('website.theme.index');
+		Route::post('/theme/update/active', 'AdminThemeController@update_active')->name('website.theme.update.active');
 		Route::resource('custom-pages', 'PageController');
 		Route::get('/custom-pages/edit/{id}', 'PageController@edit')->name('custom-pages.edit');
 		Route::get('/custom-pages/destroy/{id}', 'PageController@destroy')->name('custom-pages.destroy');

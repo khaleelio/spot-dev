@@ -30,6 +30,7 @@
         "mehedi-iitdu/paypal": "dev-master",
         "nexmo/laravel": "^2.2",
         "osenco/mpesa": "^1.20",
+        "qcod/laravel-app-settings": "^1.4",
         "qirolab/laravel-themer": "^1.4",
         "razorpay/razorpay": "2.0.0",
         "spatie/db-dumper": "dev-master",
