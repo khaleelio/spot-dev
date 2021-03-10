@@ -150,10 +150,18 @@
         </div>
     </div>
     <ul class="social-icons-simple revicon white">
-        <li class="d-table"><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-        <li class="d-table"><a href="javascript:void(0)" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+        @if(setting()->get('facebook') == 1 )
+            <li class="d-table"><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+        @endif
+        @if(setting()->get('twitter') == 1 )
+            <li class="d-table"><a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+        @endif
+        @if(setting()->get('linkedin') == 1 )
+            <li class="d-table"><a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+        @endif
+        @if(setting()->get('instagram') == 1 )
+            <li class="d-table"><a href="javascript:void(0)" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+        @endif
     </ul>
 </section>
 <!--Main Slider ends -->

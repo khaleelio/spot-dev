@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a14e6f31dd7cdcaa17510a677bdaa2cb",
+    "content-hash": "5a3c7b0e2c6b5395b00abe0601da8132",
     "packages": [
         {
             "name": "aldmohy/spotlayer-check",
@@ -4492,6 +4492,147 @@
                 "shell"
             ],
             "time": "2019-12-06T14:19:43+00:00"
+        },
+        {
+            "name": "qcod/laravel-app-settings",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qcod/laravel-app-settings.git",
+                "reference": "2f8c0874e6072ff718da63f82d5c2071fe11f1e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qcod/laravel-app-settings/zipball/2f8c0874e6072ff718da63f82d5c2071fe11f1e9",
+                "reference": "2f8c0874e6072ff718da63f82d5c2071fe11f1e9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": "^7.2",
+                "qcod/laravel-settings": "~1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4 || ~1.0",
+                "orchestra/testbench": "3.8.*|4.*|5.*",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "QCod\\AppSettings\\AppSettingsServiceProvider"
+                    ],
+                    "aliases": {
+                        "AppSettings": "QCod\\AppSettings\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "QCod\\AppSettings\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohd Saqueib Ansari",
+                    "email": "saquibweb@gmail.com"
+                }
+            ],
+            "description": "A package with UI to store and manage all the settings for your application",
+            "homepage": "https://github.com/qcod/laravel-app-settings",
+            "keywords": [
+                "app settings",
+                "bootstrap",
+                "database settings",
+                "db settings",
+                "eloquent",
+                "laravel",
+                "qcod",
+                "setting ui"
+            ],
+            "support": {
+                "issues": "https://github.com/qcod/laravel-app-settings/issues",
+                "source": "https://github.com/qcod/laravel-app-settings/tree/1.4.0"
+            },
+            "time": "2020-09-14T01:26:02+00:00"
+        },
+        {
+            "name": "qcod/laravel-settings",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qcod/laravel-settings.git",
+                "reference": "09a6d8a0457038e2d672ab57ed54e459103ba1f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qcod/laravel-settings/zipball/09a6d8a0457038e2d672ab57ed54e459103ba1f1",
+                "reference": "09a6d8a0457038e2d672ab57ed54e459103ba1f1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4 || ~1.0",
+                "orchestra/testbench": "3.8.*|4.*|5.*",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "QCod\\Settings\\SettingsServiceProvider"
+                    ],
+                    "aliases": {
+                        "Settings": "QCod\\Settings\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-4": {
+                    "QCod\\Settings\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohd Saqueib Ansari",
+                    "email": "saquibweb@gmail.com"
+                }
+            ],
+            "description": "Store key value pair in database as settings",
+            "homepage": "https://github.com/qcod/laravel-settings",
+            "keywords": [
+                "database settings",
+                "db settings",
+                "eloquent",
+                "laravel",
+                "qcod"
+            ],
+            "support": {
+                "issues": "https://github.com/qcod/laravel-settings/issues",
+                "source": "https://github.com/qcod/laravel-settings/tree/1.0.9"
+            },
+            "time": "2020-09-14T01:17:40+00:00"
         },
         {
             "name": "qirolab/laravel-themer",
