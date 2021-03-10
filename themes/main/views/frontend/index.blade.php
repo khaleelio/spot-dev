@@ -10,7 +10,7 @@
                 <!-- SLIDE 1 -->
                 <li data-index="rs-01" data-transition="fade" data-slotamount="default" data-easein="Power100.easeIn" data-easeout="Power100.easeOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="01">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ static_asset('frontend/logistic/images/banner1-1.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="{{ static_asset('themes/main/frontend/logistic/images/banner1-1.jpg')}}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYER NR. 1 -->
                     <div class="overlay overlay-dark opacity-6"></div>
                     <div class="tp-caption tp-resizeme"
@@ -57,7 +57,7 @@
                 <!-- SLIDE 2 -->
                 <li data-index="rs-02" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="02">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ static_asset('frontend/logistic/images/banner1-2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="{{ static_asset('themes/main/frontend/logistic/images/banner1-2.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYER NR. 1 -->
                     <div class="overlay overlay-dark opacity-7"></div>
                     <div class="tp-caption tp-resizeme"
@@ -103,7 +103,7 @@
                 <!-- SLIDE 3 -->
                 <li data-index="rs-03" data-transition="fade" data-slotamount="default" data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="03">
                     <!-- MAIN IMAGE -->
-                    <img src="{{ static_asset('frontend/logistic/images/banner1-3.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                    <img src="{{ static_asset('themes/main/frontend/logistic/images/banner1-3.jpg')}}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                     <!-- LAYER NR. 1 -->
                     <div class="overlay overlay-dark opacity-7"></div>
                     <div class="tp-caption tp-resizeme"
@@ -316,7 +316,7 @@
             </div>
             <div class="col-lg-6 col-md-4 col-sm-12 text-center">
                 <div class="image feature-item d-inline-block wow fadeIn my-5 my-md-0" data-wow-delay="400ms">
-                    <img src="{{ static_asset('frontend/logistic/images/mobile.png')}}" alt="mobile phones">
+                    <img src="{{ static_asset('themes/main/frontend/logistic/images/mobile.png')}}" alt="mobile phones">
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12">
@@ -389,7 +389,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="150ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-1.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-1.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Jason Wudex</h4>
@@ -405,7 +405,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="200ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-2.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-2.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Mia Twain</h4>
@@ -421,7 +421,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="250ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-3.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-3.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Peter Farry</h4>
@@ -437,7 +437,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="300ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-4.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-4.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Hayden Wood</h4>
@@ -453,7 +453,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="150ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-1.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-1.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Shania Jackson</h4>
@@ -469,7 +469,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="200ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-2.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-2.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Jessica Biel</h4>
@@ -485,7 +485,7 @@
                     <div class="item">
                         <div class="team-box wow fadeInUp" data-wow-delay="250ms">
                             <div class="image">
-                                <img src="{{ static_asset('frontend/logistic/images/team-3.jpg')}}" alt="">
+                                <img src="{{ static_asset('themes/main/frontend/logistic/images/team-3.jpg')}}" alt="">
                             </div>
                             <div class="team-content">
                                 <h4 class="darkcolor">Jessica Jung</h4>
@@ -658,7 +658,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12 text-center">
                         <div class="testimonial-round d-inline-block">
-                            <img src="{{ static_asset('frontend/logistic/images/testimonial-2.jpg')}}" alt="">
+                            <img src="{{ static_asset('themes/main/frontend/logistic/images/testimonial-2.jpg')}}" alt="">
                         </div>
                         <h4 class="defaultcolor font-light top15"><a href="#.">John Smith</a></h4>
                         <p>Shipping, New York</p>
@@ -680,7 +680,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12 text-center">
                         <div class="testimonial-round d-inline-block">
-                            <img src="{{ static_asset('frontend/logistic/images/testimonial-1.jpg')}}" alt="">
+                            <img src="{{ static_asset('themes/main/frontend/logistic/images/testimonial-1.jpg')}}" alt="">
                         </div>
                         <h4 class="defaultcolor font-light top15"><a href="#.">Hayden Wood</a></h4>
                         <p>Cargo, Italy</p>
@@ -702,7 +702,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12 text-center">
                         <div class="testimonial-round d-inline-block">
-                            <img src="{{ static_asset('frontend/logistic/images/testimonial-3.jpg')}}" alt="">
+                            <img src="{{ static_asset('themes/main/frontend/logistic/images/testimonial-3.jpg')}}" alt="">
                         </div>
                         <h4 class="defaultcolor font-light top15"><a href="#.">Kevin Miller</a></h4>
                         <p>Airplane, Australia</p>
@@ -724,7 +724,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12 text-center">
                         <div class="testimonial-round d-inline-block">
-                            <img src="{{ static_asset('frontend/logistic/images/testimonial-4.jpg')}}" alt="">
+                            <img src="{{ static_asset('themes/main/frontend/logistic/images/testimonial-4.jpg')}}" alt="">
                         </div>
                         <h4 class="defaultcolor font-light top15"><a href="#.">Alina Johanson</a></h4>
                         <p>Trucks, Sidney</p>

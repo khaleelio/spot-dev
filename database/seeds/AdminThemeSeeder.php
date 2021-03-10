@@ -16,5 +16,10 @@ class AdminThemeSeeder extends Seeder
         $theme->name = 'main';
         $theme->active = 1;
         $theme->save();
+
+        $theme = new AdminTheme();
+        $theme->name = 'dark';
+        $theme->active = 1;
+        $theme->save();
     }
 }

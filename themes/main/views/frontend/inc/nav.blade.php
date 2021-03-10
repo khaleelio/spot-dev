@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg transparent-bg static-nav">
         <div class="container">
             <a class="navbar-brand" href="index-logistic.html">
-                <img src="{{ static_asset('frontend/logistic/images/logo-transparent.png')}}" alt="logo" class="logo-default">
-                <img src="{{ static_asset('frontend/logistic/images/logo.png')}}" alt="logo" class="logo-scrolled">
+                <img src="{{ static_asset('themes/main/frontend/logistic/images/logo-transparent.png')}}" alt="logo" class="logo-default">
+                <img src="{{ static_asset('themes/main/frontend/logistic/images/logo.png')}}" alt="logo" class="logo-scrolled">
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">

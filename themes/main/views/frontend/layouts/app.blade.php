@@ -57,14 +57,14 @@
     @endif
    
     
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/bundle.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/jquery.fancybox.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/cubeportfolio.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/tooltipster.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/vendor/css/revolution-settings.min.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/logistic/css/revolution/navigation.css')}}">
-    <link rel="stylesheet" href="{{ static_asset('frontend/logistic/css/style.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/bundle.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/jquery.fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/cubeportfolio.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/tooltipster.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/vendor/css/revolution-settings.min.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/logistic/css/revolution/navigation.css')}}">
+    <link rel="stylesheet" href="{{ static_asset('themes/main/frontend/logistic/css/style.css')}}">
 
     <script>
         var AIZ = AIZ || {};
@@ -161,38 +161,38 @@
     @yield('modal')
 
   
-    <script src="{{ static_asset('frontend/vendor/js/bundle.min.js')}}"></script>
+    <script src="{{ static_asset('themes/main/frontend/vendor/js/bundle.min.js')}}"></script>
 <!--to view items on reach-->
-<script src="{{ static_asset('frontend/vendor/js/jquery.appear.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery.appear.js')}}"></script>
 <!--Owl Slider-->
-<script src="{{ static_asset('frontend/vendor/js/owl.carousel.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/owl.carousel.min.js')}}"></script>
 <!--Parallax Background-->
-<script src="{{ static_asset('frontend/vendor/js/parallaxie.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/parallaxie.min.js')}}"></script>
 <!--Cubefolio Gallery-->
-<script src="{{ static_asset('frontend/vendor/js/jquery.cubeportfolio.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery.cubeportfolio.min.js')}}"></script>
 <!--Fancybox js-->
-<script src="{{ static_asset('frontend/vendor/js/jquery.fancybox.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery.fancybox.min.js')}}"></script>
 <!--wow js-->
-<script src="{{ static_asset('frontend/vendor/js/wow.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/wow.min.js')}}"></script>
 <!--number counters-->
-<script src="{{ static_asset('frontend/vendor/js/jquery-countTo.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery-countTo.js')}}"></script>
 <!--tooltip js-->
-<script src="{{ static_asset('frontend/vendor/js/tooltipster.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/tooltipster.min.js')}}"></script>
 <!--Revolution SLider-->
-<script src="{{ static_asset('frontend/vendor/js/jquery.themepunch.tools.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery.themepunch.tools.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/jquery.themepunch.revolution.min.js')}}"></script>
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS -->
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script src="{{ static_asset('frontend/vendor/js/extensions/revolution.extension.video.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.actions.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.carousel.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.migration.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.parallax.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/vendor/js/extensions/revolution.extension.video.min.js')}}"></script>
 <!--custom functions and script-->
-<script src="{{ static_asset('frontend/logistic/js/functions.js')}}"></script>
+<script src="{{ static_asset('themes/main/frontend/logistic/js/functions.js')}}"></script>
 
 
     @if (get_setting('facebook_chat') == 1)
