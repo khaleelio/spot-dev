@@ -19,7 +19,7 @@ class CreateAdminThemesTable extends Migration
             $table->string('title')->nullable();
             $table->text('img')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('active')->default(1);
+            $table->boolean('active')->default(0);
             $table->timestamps();
         });
     }
