@@ -16,6 +16,9 @@ class CreateAdminThemesTable extends Migration
         Schema::create('admin_themes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('title')->nullable();
+            $table->text('img')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
         });

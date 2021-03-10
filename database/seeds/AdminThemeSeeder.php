@@ -14,12 +14,14 @@ class AdminThemeSeeder extends Seeder
     {
         $theme = new AdminTheme();
         $theme->name = 'main';
+        $theme->title = 'Main Theme';
         $theme->active = 1;
         $theme->save();
 
         $theme = new AdminTheme();
         $theme->name = 'dark';
-        $theme->active = 1;
+        $theme->title = 'Dark Theme';
+        $theme->active = 0;
         $theme->save();
     }
 }

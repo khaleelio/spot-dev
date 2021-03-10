@@ -13,43 +13,35 @@
             </div>
         </div>
     </div>
-    <div class="card">
-        <div class="row pad">
-            @forelse ($themes as $theme)
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <div class="caption">
-                            <div class="col-12" style="background: #eee; padding: 15px;">
-                                <div style="word-break: break-all">
-                                    <h4>{{$theme->name}}</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div>
-                                    @if ($theme->active == 1)
-                                        <button class="btn btn-info" disabled="disabled">
-                                            <i class="fa fa-check"></i>
-                                            {{ translate('Activated') }}
-                                        </button>
-                                    @else
-                                        <form action="{{ route('website.theme.update.active') }}" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                            <input type="hidden" name="id" value="{{$theme->id}}">
-                                            <button class="btn btn-info">
-                                                <i class="fa fa-check"></i>
-                                                {{ translate('Inactivated') }}
-                                            </button>
-                                        </form>
-                                    @endif
-                                    
-                                </div>
-                            </div>
-                        </div>
+    <div class="row pad">
+        @forelse ($themes as $theme)
+            <div class="col-sm-6 col-md-4 col-lg-3">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$theme->title ?? $theme->name}}</h5>
+                        <p class="card-text">{{$theme->description ?? ''}}</p>
+                        @if ($theme->active == 1)
+                                    <button class="btn btn-primary" disabled="disabled">
+                                        <i class="fa fa-check"></i>
+                                        {{ translate('Activated') }}
+                                    </button>
+                        @else
+                            <form action="{{ route('website.theme.update.active') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$theme->id}}">
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-times"></i>
+                                    {{ translate('Inactivated') }}
+                                </button>
+                            </form>
+                        @endif
                     </div>
                 </div>
-            @empty
-                
-            @endforelse
-        </div>
+            </div>
+        @empty
+            
+        @endforelse
     </div>
 
 @endsection
