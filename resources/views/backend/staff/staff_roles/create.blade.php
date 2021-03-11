@@ -47,7 +47,7 @@
                 </div>
 
                 <form class="form" action="{{ route('roles.store') }}" id="kt_form_1" method="POST" enctype="multipart/form-data">
-                    <input name="_method" type="hidden" value="PATCH">
+         
                     @csrf
                     <div class="card-body">
                         <div class="form-group">

@@ -64,7 +64,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	    Route::get('/sliders/destroy/{id}', 'SliderController@destroy')->name('sliders.destroy');
 
 	});
-
+	Route::post('/newsletter/test/smtp', 'NewsletterController@testEmail')->name('test.smtp');
 	// website setting
 	Route::group(['prefix' => 'website'], function(){
 		Route::view('/header', 'backend.website_settings.header')->name('website.header');

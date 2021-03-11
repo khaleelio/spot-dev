@@ -32,6 +32,39 @@ if (! function_exists('getConfigValue')) {
         return \App\Http\Helpers\SpotConfigHelper::getValue($key);
     }
 }
+
+if (! function_exists('redirect_input')) {
+    function redirect_input() {
+        $input = '';
+        if(isset($_GET['redirect']))
+        {
+            $input .= "<input type='hidden' name='redirect' value='".$_GET['redirect']."' />";
+        }
+        return $input;
+    }
+}
+
+if (! function_exists('execute_redirect')) {
+    function execute_redirect($request) {
+        $input = '';
+        if(isset($request->redirect))
+        {
+            if(Route::has($request->redirect))
+            {
+                
+                return redirect(route($request->redirect));
+            }else
+            {
+                return redirect()->back();
+            }
+        }else
+        {
+            return redirect()->back();
+        }
+        
+    }
+}
+
 //Hook views
 if (! function_exists('hookView')) {
     function hookView($addon_id,$currentView,$data=null,$currentSection = null) {
