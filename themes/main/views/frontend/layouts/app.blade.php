@@ -72,7 +72,8 @@
 
     <style>
         body{
-            font-family: 'Open Sans', sans-serif;
+            /* font-family: 'Open Sans', sans-serif; */
+            font-family: '{{ setting()->get("primary_font") ?? "Open Sans" }}';
             font-weight: 400;
         }
         :root{

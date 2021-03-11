@@ -150,17 +150,17 @@
         </div>
     </div>
     <ul class="social-icons-simple revicon white">
-        @if(setting()->get('facebook') == 1 )
-            <li class="d-table"><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+        @if(setting()->get('facebook'))
+            <li class="d-table"><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
         @endif
-        @if(setting()->get('twitter') == 1 )
-            <li class="d-table"><a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+        @if(setting()->get('twitter'))
+            <li class="d-table"><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
         @endif
-        @if(setting()->get('linkedin') == 1 )
-            <li class="d-table"><a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+        @if(setting()->get('linkedin'))
+            <li class="d-table"><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
         @endif
-        @if(setting()->get('instagram') == 1 )
-            <li class="d-table"><a href="javascript:void(0)" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+        @if(setting()->get('instagram'))
+            <li class="d-table"><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
         @endif
     </ul>
 </section>
@@ -403,9 +403,18 @@
                                 <h4 class="darkcolor">Jason Wudex</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                   @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -419,9 +428,18 @@
                                 <h4 class="darkcolor">Mia Twain</h4>
                                 <p>Designer</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -435,9 +453,18 @@
                                 <h4 class="darkcolor">Peter Farry</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -451,9 +478,18 @@
                                 <h4 class="darkcolor">Hayden Wood</h4>
                                 <p>Marketing</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -467,9 +503,18 @@
                                 <h4 class="darkcolor">Shania Jackson</h4>
                                 <p>Print Media</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -483,9 +528,18 @@
                                 <h4 class="darkcolor">Jessica Biel</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>
@@ -499,9 +553,18 @@
                                 <h4 class="darkcolor">Jessica Jung</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    <li><a class="facebook" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                                    <li><a class="twitter" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                                    <li><a class="insta" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                                    @if(setting()->get('facebook'))
+                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
+                                    @endif
+                                    @if(setting()->get('twitter'))
+                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('linkedin'))
+                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
+                                    @endif
+                                    @if(setting()->get('instagram'))
+                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                                    @endif
                                 </ul>
                             </div>
                         </div>

@@ -13,10 +13,18 @@
                         </p>
                     </div>
                     <ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-facebook-f"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-twitter"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-linkedin-in"></i> </a> </li>
-                        <li><a href="javascript:void(0)" class=""><i class="fab fa-instagram"></i> </a> </li>
+                        @if(setting()->get('facebook'))
+                            <li><a href="{{setting()->get('facebook_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-facebook-f"></i></a> </li>
+                        @endif
+                        @if(setting()->get('twitter'))
+                            <li><a href="{{setting()->get('twitter_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-twitter"></i> </a> </li>
+                        @endif
+                        @if(setting()->get('linkedin'))
+                            <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-linkedin-in"></i> </a> </li>
+                        @endif
+                        @if(setting()->get('instagram'))
+                            <li><a href="{{setting()->get('instagram_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-instagram"></i> </a> </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -55,6 +63,22 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="py-4 d-flex flex-lg-column">
+            <!--begin::Container-->
+            <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+                <!--begin::Copyright-->
+                <div class="text-dark order-2 order-md-1">
+                    {!! setting()->get('copy_right') ?? '' !!}
+                </div>
+                <!--end::Copyright-->
+                <!--begin::Nav-->
+                <div class="nav nav-dark">
+                    {!! setting()->get('designed_by') ?? '' !!}
+                </div>
+                <!--end::Nav-->
+            </div>
+            <!--end::Container-->
         </div>
     </div>
 </footer>
