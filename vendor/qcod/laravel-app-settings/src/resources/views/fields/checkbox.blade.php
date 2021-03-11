@@ -10,8 +10,8 @@
 </div> --}}
 
 <div class="form-group row {{ $errors->has($field['name']) ? ' has-error' : '' }}">
-    <label class="col-form-label col-3 text-lg-right text-left">{{ $field['label'] }}</label>
-    <div class="col-3">
+    <label class="col-4">{{ $field['label'] }}</label>
+    <div class="col-4">
         <span class="switch">
             <label>
                 <input type="checkbox" 

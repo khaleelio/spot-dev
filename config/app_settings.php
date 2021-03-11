@@ -4,6 +4,52 @@ return [
 
     // All the sections for the settings page
     'sections' => [
+        'header' => [
+            'title' => ' Header',
+            'descriptions' => '',
+            'icon' => 'fas fa-bezier-curve',
+
+            'inputs' => [
+                [
+                    'name' => 'header_logo', // unique key for setting
+                    'type' => 'image', // type of input can be text, number, textarea, select, boolean, checkbox etc.
+                    'label' => 'Header Logo', // label for input
+                    // optional properties
+                    'placeholder' => 'Choose logo...', // placeholder for input
+                    'class' => 'custom-file-input', // override global input_class
+                    'style' => '', // any inline styles
+                    'rules' => 'image|max:500', // validation rules for this input
+                    'disk' => 'public', // which disk you want to upload, default to 'public'
+                    'path' => '', // path on the disk, default to '/',
+                    'preview_class' => 'thumbnail', // class for preview of uploaded image
+                    'preview_style' => 'height:40px' // style for preview
+                ],
+                [
+                    'name' => 'header_language',
+                    'type' => 'checkbox',
+                    'label' => 'Show Language Switcher : ',
+                    'value' => '0',
+                    'class' => 'w-auto form-control aiz-selectpicker',
+                    
+                ],
+                [
+                    'name' => 'header_currency',
+                    'type' => 'checkbox',
+                    'label' => 'Show Currency Switcher : ',
+                    'value' => '0',
+                    'class' => 'w-auto form-control aiz-selectpicker',
+                    
+                ],
+                [
+                    'name' => 'header_stikcy',
+                    'type' => 'checkbox',
+                    'label' => 'Stikcy header Switcher : ',
+                    'value' => '0',
+                    'class' => 'w-auto form-control aiz-selectpicker',
+                    
+                ],
+            ]
+        ],
         'app' => [
             'title' => ' General Settings',
             'descriptions' => 'Application general settings.', // (optional)
@@ -24,7 +70,7 @@ return [
                 ],
                 [
                     'name' => 'copy_right', // unique key for setting
-                    'type' => 'textarea', // type of input can be text, number, textarea, select, boolean, checkbox etc.
+                    'type' => 'text', // type of input can be text, number, textarea, select, boolean, checkbox etc.
                     'label' => 'Copy right', // label for input
                     // optional properties
                     'placeholder' => 'Copy right', // placeholder for input
@@ -32,13 +78,12 @@ return [
                     'style' => '', // any inline styles
                     'rules' => '', // validation rules for this input
                     'value' => '', // any default value
-                    'hint' => 'Copyright on footer of site', // help block text for input
-                    'rows' => 4,
-                    'cols' => 10,
+                    'hint' => 'Copyright on footer of site. "Accept html tags"', // help block text for input
+                    'rows' => 6,
                 ],
                 [
                     'name' => 'designed_by', // unique key for setting
-                    'type' => 'textarea', // type of input can be text, number, textarea, select, boolean, checkbox etc.
+                    'type' => 'text', // type of input can be text, number, textarea, select, boolean, checkbox etc.
                     'label' => 'Designed by', // label for input
                     // optional properties
                     'placeholder' => 'Designed by', // placeholder for input
@@ -46,13 +91,12 @@ return [
                     'style' => '', // any inline styles
                     'rules' => '', // validation rules for this input
                     'value' => '', // any default value
-                    'hint' => 'Designed by on footer of site', // help block text for input
-                    'rows' => 4,
-                    'cols' => 10,
+                    'hint' => 'Designed by on footer of site. "Accept html tags"', // help block text for input
+                    'rows' => 6,
                 ],
                 [
                     'name' => 'primary_font', // unique key for setting
-                    'type' => 'select', // type of input can be text, number, textarea, select, boolean, checkbox etc.
+                    'type' => 'select_font', // type of input can be text, number, textarea, select, boolean, checkbox etc.
                     'label' => 'Primary font', // label for input
                     // optional properties
                     'placeholder' => 'Primary font', // placeholder for input

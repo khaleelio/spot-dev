@@ -313,7 +313,7 @@ class AppSettings
         $oldFile = $this->get($settingName);
 
         if ($request->hasFile($settingName)) {
-            $uploadedPath = $request->$settingName->store($path, $disk);
+            $uploadedPath = $request->$settingName->store('app/public/'.$path, $disk);
             $this->set($settingName, $uploadedPath);
 
             // delete old file
