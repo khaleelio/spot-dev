@@ -17,22 +17,26 @@
         @csrf
         <input type="hidden" name="id" value="{{$config['container_widget']->id}}">
         <div class="card-body p-2">
-            <div class="form-group">
-                <label>{{ translate('Title') }}</label>
-                <input type="text" class="form-control" placeholder="title" name="title" value="{{$config['container_widget']->title}}"/>
-            </div>
-            <div class="form-group">
-                <label>{{ translate('Value') }}</label>
-                <textarea class="form-control" name="value" cols="30" rows="4">{{$config['container_widget']->value}}</textarea>
-            </div>
-            <div class="form-group">
-                <label>{{ translate('Link') }}</label>
-                <input type="text" class="form-control" placeholder="link" name="link" value="{{$config['container_widget']->link}}"/>
-            </div>
-            <div class="form-group">
-                <label>{{ translate('Class') }}</label>
-                <input type="text" class="form-control" placeholder="class" name="class" value="{{$config['container_widget']->class}}"/>
-            </div>
+            @if($config['container_widget']->type)
+                {!! json_decode($config['container_widget']->object)->form !!}
+            @else
+                <div class="form-group">
+                    <label>{{ translate('Title') }}</label>
+                    <input type="text" class="form-control" placeholder="title" name="title" value="{{$config['container_widget']->title}}"/>
+                </div>
+                <div class="form-group">
+                    <label>{{ translate('Value') }}</label>
+                    <textarea class="form-control" name="value" cols="30" rows="4">{{$config['container_widget']->value}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>{{ translate('Link') }}</label>
+                    <input type="text" class="form-control" placeholder="link" name="link" value="{{$config['container_widget']->link}}"/>
+                </div>
+                <div class="form-group">
+                    <label>{{ translate('Class') }}</label>
+                    <input type="text" class="form-control" placeholder="class" name="class" value="{{$config['container_widget']->class}}"/>
+                </div>
+            @endif
         </div>
         <div class="card-footer text-center">
             <button type="submit" class="btn btn-success">{{ translate('Submit') }}</button>

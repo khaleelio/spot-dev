@@ -16,6 +16,9 @@ class CreateAdminWidgetsTable extends Migration
         Schema::create('admin_widgets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title')->nullable();
+            $table->string('name')->nullable();
+            $table->string('type')->nullable();
+            $table->longText('object')->nullable();
             $table->longText('value')->nullable();
             $table->string('link')->nullable();
             $table->unsignedBigInteger('parent_id')->default(0);

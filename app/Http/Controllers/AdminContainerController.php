@@ -12,8 +12,8 @@ class AdminContainerController extends Controller
     public function index()
     {
         $containers = AdminContainer::all();
-        // return $containers[0]->container_widget[0];
         $widgets = AdminWidget::all();
+
         return view('backend.widget.index',['containers'=>$containers,'widgets'=>$widgets]);
     }
 

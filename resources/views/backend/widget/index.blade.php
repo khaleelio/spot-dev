@@ -37,26 +37,29 @@
                             @csrf
                             <input type="hidden" name="id" value="" class="id">
                             <div class="card-body p-2">
-                                <div class="form-group">
-                                    <label>{{ translate('Title') }}</label>
-                                    <input type="text" class="form-control" placeholder="title" name="title" value="{{$widget->title}}"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>{{ translate('Value') }}</label>
-                                    <textarea class="form-control" name="value" cols="30" rows="4">{{$widget->value}}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>{{ translate('Link') }}</label>
-                                    <input type="text" class="form-control" placeholder="link" name="link" value="{{$widget->link}}"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>{{ translate('Class') }}</label>
-                                    <input type="text" class="form-control" placeholder="class" name="class" value="{{$widget->class}}"/>
-                                </div>
+                                @if($widget->type)
+                                    {!! json_decode($widget->object)->form !!}
+                                @else
+                                    <div class="form-group">
+                                        <label>{{ translate('Title') }}</label>
+                                        <input type="text" class="form-control" placeholder="title" name="title" value="{{$widget->title}}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ translate('Value') }}</label>
+                                        <textarea class="form-control" name="value" cols="30" rows="4">{{$widget->value}}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ translate('Link') }}</label>
+                                        <input type="text" class="form-control" placeholder="link" name="link" value="{{$widget->link}}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ translate('Class') }}</label>
+                                        <input type="text" class="form-control" placeholder="class" name="class" value="{{$widget->class}}"/>
+                                    </div>
+                                @endif
                             </div>
                             <div class="card-footer text-center">
                                 <button type="submit" class="btn btn-success">{{ translate('Submit') }}</button>
-                                {{-- <button type="reset" class="btn btn-secondary">Cancel</button> --}}
                             </div>
                         </form>
                     </div>

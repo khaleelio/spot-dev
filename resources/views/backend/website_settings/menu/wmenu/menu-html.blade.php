@@ -110,11 +110,11 @@ $currentUrl = url()->current();
 																	
 																	<p id="menu-item-select-wrap-categories">
 																		<div class="row">
-																			<div class="col-2">
+																			<div class="col-3">
 																				<label class="howto" for="custom-menu-item-select-categories"> <span>{{translate('Category')}}</span>&nbsp;&nbsp;&nbsp;
 																				</label>
 																			</div>
-																			<div class="col-10">
+																			<div class="col-9">
 																				<select class="form-control selectpicker" id="custom-menu-item-select-categories" data-live-search="true" tabindex="null" onchange="select_category(this)">
 																					<option selected>{{ translate('Choose') }}...</option>
 																					@foreach ($categories as $category)

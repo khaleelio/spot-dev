@@ -96,7 +96,7 @@
                 @endif
 
                 @if(Auth::user()->user_type == 'admin' || in_array('13', json_decode(Auth::user()->staff->role->permissions)))
-                    <li class="menu-item menu-item-submenu   {{ areActiveRoutes(['support_ticket.admin_index','website.header','website.footer','website.pages','website.appearance','website.menu.index','website.container.index','website.theme.index','website.theme.option.index'])}}" aria-haspopup="true" data-menu-toggle="hover">
+                    <li class="menu-item menu-item-submenu   {{ areActiveRoutes(['support_ticket.admin_index','website.pages','website.menu.index','website.container.index','website.theme.index','website.theme.option.index'])}}" aria-haspopup="true" data-menu-toggle="hover">
                         <a href="javascript:;" class="menu-link menu-toggle">
                             <i class="menu-icon flaticon2-website"></i>
                             <span class="menu-text">{{translate('Website')}}</span>
@@ -110,36 +110,12 @@
                                         <span class="menu-text">{{translate('Website')}}</span>
                                     </span>
                                 </li>
-                                <li class="menu-item {{ areActiveRoutes(['website.header'])}}" aria-haspopup="true">
-                                    <a href="{{ route('website.header') }}" class="menu-link">
-                                        <i class="menu-bullet menu-bullet-dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="menu-text">{{translate('Header')}}</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item {{ areActiveRoutes(['website.footer'])}}" aria-haspopup="true">
-                                    <a href="{{ route('website.footer') }}" class="menu-link">
-                                        <i class="menu-bullet menu-bullet-dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="menu-text">{{translate('Footer')}}</span>
-                                    </a>
-                                </li>
                                 <li class="menu-item  {{ areActiveRoutes(['website.pages'])}}" aria-haspopup="true">
                                     <a href="{{ route('website.pages') }}" class="menu-link">
                                         <i class="menu-bullet menu-bullet-dot">
                                             <span></span>
                                         </i>
                                         <span class="menu-text">{{translate('Pages')}}</span>
-                                    </a>
-                                </li>
-                                <li class="menu-item  {{ areActiveRoutes(['website.appearance'])}}" aria-haspopup="true">
-                                    <a href="{{ route('website.appearance') }}" class="menu-link">
-                                        <i class="menu-bullet menu-bullet-dot">
-                                            <span></span>
-                                        </i>
-                                        <span class="menu-text">{{translate('Appearance')}}</span>
                                     </a>
                                 </li>
                                 <li class="menu-item  {{ areActiveRoutes(['website.menu.index'])}}" aria-haspopup="true">

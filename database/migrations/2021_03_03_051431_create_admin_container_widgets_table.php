@@ -18,6 +18,9 @@ class CreateAdminContainerWidgetsTable extends Migration
             $table->unsignedBigInteger('widget_id')->nullable();
             $table->unsignedBigInteger('container_id')->nullable();
             $table->string('title');
+            $table->string('name')->nullable();
+            $table->string('type')->nullable();
+            $table->longText('object')->nullable();
             $table->longText('value')->nullable();
             $table->string('link')->nullable();
             $table->integer('sort')->default(0);
