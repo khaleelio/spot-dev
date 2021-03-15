@@ -45,7 +45,7 @@ if (! function_exists('redirect_input')) {
 }
 
 if (! function_exists('execute_redirect')) {
-    function execute_redirect($request) {
+    function execute_redirect($request,$route=null) {
         $input = '';
         if(isset($request->redirect))
         {
@@ -59,7 +59,13 @@ if (! function_exists('execute_redirect')) {
             }
         }else
         {
-            return redirect()->back();
+            if($route != null)
+            {
+                return redirect(route($route));
+            }else
+            {
+                return redirect()->back();
+            }
         }
         
     }
