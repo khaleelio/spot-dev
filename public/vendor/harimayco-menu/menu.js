@@ -38,16 +38,37 @@ function getmenus() {
   actualizarmenu();
 }
 
-function addcustommenu() {
-  $('#spincustomu').show();
+function addcustommenu(type=null) {
 
-  $.ajax({
-    data: {
+  if(type=='page'){
+    $('#spincustomu-pages').show();
+    var data = {
+      labelmenu: $('#custom-menu-item-name-pages').val(),
+      linkmenu: $('#custom-menu-item-url-pages').val(),
+      rolemenu: $('#custom-menu-item-role-pages').val(),
+      idmenu: $('#idmenu').val()
+    }
+  }else if(type=='category'){
+    $('#spincustomu-categories').show();
+    var data = {
+      labelmenu: $('#custom-menu-item-name-categories').val(),
+      linkmenu: $('#custom-menu-item-url-categories').val(),
+      rolemenu: $('#custom-menu-item-role-categories').val(),
+      idmenu: $('#idmenu').val()
+    }
+  }else{
+    $('#spincustomu').show();
+    var data = {
       labelmenu: $('#custom-menu-item-name').val(),
       linkmenu: $('#custom-menu-item-url').val(),
       rolemenu: $('#custom-menu-item-role').val(),
       idmenu: $('#idmenu').val()
-    },
+    }
+  }
+  // console.log(data);
+
+  $.ajax({
+    data: data,
 
     url: addcustommenur,
     type: 'POST',

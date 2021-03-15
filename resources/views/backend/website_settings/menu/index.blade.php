@@ -42,4 +42,37 @@
 @section('script')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {!! Menu::scripts() !!}
+    <script>
+        var pages = @json($pages);
+        var current_url = "{{ route('home') }}";
+        function select_page(select){
+            var input_url = document.getElementById('custom-menu-item-url-pages');
+            var input_label = document.getElementById('custom-menu-item-name-pages');
+            var page = pages.find(o => o.title === select.value);
+            if(page){
+                input_url.value = current_url + '/' + page.slug;
+                input_label.value = page.title;
+            }else{
+                input_url.value = '';
+                input_label.value = '';
+            }
+        }
+
+        @isset($categories)
+            var categories = @json($categories);
+            var current_url = "{{ route('home') }}";
+            function select_category(select){
+                var input_url = document.getElementById('custom-menu-item-url-categories');
+                var input_label = document.getElementById('custom-menu-item-name-categories');
+                var category = categories.find(o => o.title === select.value);
+                if(category){
+                    input_url.value = current_url + '/' + category.slug;
+                    input_label.value = category.title;
+                }else{
+                    input_url.value = '';
+                    input_label.value = '';
+                }
+            }
+        @endisset
+    </script>
 @endsection

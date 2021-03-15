@@ -32,6 +32,140 @@ $currentUrl = url()->current();
 
 									<div class="clear"></div>
 
+									<form id="nav-menu-meta-pages" action="" class="nav-menu-meta mb-3" method="post" enctype="multipart/form-data">
+										<div id="side-sortables-pages" class="accordion-container">
+											<ul class="outer-border">
+												<li class="control-section accordion-section  open add-page" id="add-page">
+													<h3 class="accordion-section-title hndle" tabindex="0"> {{translate('Pages')}} <span class="screen-reader-text">{{translate('Press return or enter to expand')}}</span></h3>
+													<div class="accordion-section-content " style="overflow: visible">
+														<div class="inside">
+															<div class="customlinkdiv" id="customlinkdiv-pages">
+																
+																<p id="menu-item-select-wrap-pages">
+																	<div class="row">
+																		<div class="col-2">
+																			<label class="howto" for="custom-menu-item-select-pages"> <span>{{translate('Page')}}</span>&nbsp;&nbsp;&nbsp;
+																			</label>
+																		</div>
+																		<div class="col-10">
+																			<select class="form-control selectpicker" id="custom-menu-item-select-pages" data-live-search="true" tabindex="null" onchange="select_page(this)">
+																				<option selected>{{ translate('Choose') }}...</option>
+																				@foreach ($pages as $page)
+																					<option data-tokens="{{$page->title}}" value="{{$page->title}}">{{$page->title}}</option>
+																				@endforeach
+																			</select>
+																		</div>
+																	</div>
+																</p>
+
+																<p id="menu-item-url-wrap-pages">
+																	<label class="howto" for="custom-menu-item-url"> <span>{{translate('URL')}}</span>&nbsp;&nbsp;&nbsp;
+																		<input id="custom-menu-item-url-pages" name="url" type="text" class="menu-item-textbox " placeholder="url">
+																	</label>
+																</p>
+
+																<p id="menu-item-name-wrap-pages">
+																	<label class="howto" for="custom-menu-item-name-pages"> <span>{{translate('Label')}}</span>&nbsp;
+																		<input id="custom-menu-item-name-pages" name="label" type="text" class="regular-text menu-item-textbox input-with-default-title" title="Label menu">
+																	</label>
+																</p>
+
+																@if(!empty($roles))
+																<p id="menu-item-role_id-wrap-pages">
+																	<label class="howto" for="custom-menu-item-role-pages"> <span>{{translate('Role')}}</span>&nbsp;
+																		<select id="custom-menu-item-role-pages" name="role">
+																			<option value="0">{{translate('Select Role')}}</option>
+																			@foreach($roles as $role)
+																				<option value="{{ $role->$role_pk }}">{{ ucfirst($role->$role_title_field) }}</option>
+																			@endforeach
+																		</select>
+																	</label>
+																</p>
+																@endif
+
+																<p class="button-controls">
+
+																	<a  href="#" onclick="addcustommenu('page')"  class="button-secondary submit-add-to-menu right"  >{{translate('Add menu item')}}</a>
+																	<span class="spinner" id="spincustomu-pages"></span>
+																</p>
+
+															</div>
+														</div>
+													</div>
+												</li>
+
+											</ul>
+										</div>
+									</form>
+
+									@isset($categories)
+										<form id="nav-menu-meta-categories" action="" class="nav-menu-meta mb-3" method="post" enctype="multipart/form-data">
+											<div id="side-sortables-categories" class="accordion-container">
+												<ul class="outer-border">
+													<li class="control-section accordion-section  open add-page" id="add-page">
+														<h3 class="accordion-section-title hndle" tabindex="0"> {{translate('Categories')}} <span class="screen-reader-text">{{translate('Press return or enter to expand')}}</span></h3>
+														<div class="accordion-section-content " style="overflow: visible">
+															<div class="inside">
+																<div class="customlinkdiv" id="customlinkdiv-categories">
+																	
+																	<p id="menu-item-select-wrap-categories">
+																		<div class="row">
+																			<div class="col-2">
+																				<label class="howto" for="custom-menu-item-select-categories"> <span>{{translate('Category')}}</span>&nbsp;&nbsp;&nbsp;
+																				</label>
+																			</div>
+																			<div class="col-10">
+																				<select class="form-control selectpicker" id="custom-menu-item-select-categories" data-live-search="true" tabindex="null" onchange="select_category(this)">
+																					<option selected>{{ translate('Choose') }}...</option>
+																					@foreach ($categories as $category)
+																						<option data-tokens="{{$category->title}}" value="{{$category->title}}">{{$category->title}}</option>
+																					@endforeach
+																				</select>
+																			</div>
+																		</div>
+																	</p>
+
+																	<p id="menu-item-url-wrap-categories">
+																		<label class="howto" for="custom-menu-item-url"> <span>{{translate('URL')}}</span>&nbsp;&nbsp;&nbsp;
+																			<input id="custom-menu-item-url-categories" name="url" type="text" class="menu-item-textbox " placeholder="url">
+																		</label>
+																	</p>
+
+																	<p id="menu-item-name-wrap-categories">
+																		<label class="howto" for="custom-menu-item-name-categories"> <span>{{translate('Label')}}</span>&nbsp;
+																			<input id="custom-menu-item-name-categories" name="label" type="text" class="regular-text menu-item-textbox input-with-default-title" title="Label menu">
+																		</label>
+																	</p>
+
+																	@if(!empty($roles))
+																	<p id="menu-item-role_id-wrap-categories">
+																		<label class="howto" for="custom-menu-item-role-categories"> <span>{{translate('Role')}}</span>&nbsp;
+																			<select id="custom-menu-item-role-categories" name="role">
+																				<option value="0">{{translate('Select Role')}}</option>
+																				@foreach($roles as $role)
+																					<option value="{{ $role->$role_pk }}">{{ ucfirst($role->$role_title_field) }}</option>
+																				@endforeach
+																			</select>
+																		</label>
+																	</p>
+																	@endif
+
+																	<p class="button-controls">
+
+																		<a  href="#" onclick="addcustommenu('category')"  class="button-secondary submit-add-to-menu right"  >{{translate('Add menu item')}}</a>
+																		<span class="spinner" id="spincustomu-categories"></span>
+																	</p>
+
+																</div>
+															</div>
+														</div>
+													</li>
+
+												</ul>
+											</div>
+										</form>
+									@endisset
+
 									<form id="nav-menu-meta" action="" class="nav-menu-meta" method="post" enctype="multipart/form-data">
 										<div id="side-sortables" class="accordion-container">
 											<ul class="outer-border">

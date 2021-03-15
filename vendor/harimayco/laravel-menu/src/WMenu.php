@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Harimayco\Menu\Models\Menus;
 use Harimayco\Menu\Models\MenuItems;
 use Illuminate\Support\Facades\DB;
+use App\Page;
+use App\Category;
 
 class WMenu
 {
@@ -25,21 +27,27 @@ class WMenu
 
             $menu = Menus::find(request()->input("menu"));
             $menus = $menuitems->getall(request()->input("menu"));
+            $pages = Page::select('title','slug')->get();
+            if(class_exists("App\Category")){
+                $categories = Category::select('title','slug')->get();
+                $data = ['menus' => $menus, 'indmenu' => $menu, 'menulist' => $menulist, 'pages' => $pages, 'categories' => $categories];
+            }else{
+                $data = ['menus' => $menus, 'indmenu' => $menu, 'menulist' => $menulist, 'pages' => $pages];
+            }
 
-            $data = ['menus' => $menus, 'indmenu' => $menu, 'menulist' => $menulist];
             if( config('menu.use_roles')) {
                 $data['roles'] = DB::table(config('menu.roles_table'))->select([config('menu.roles_pk'),config('menu.roles_title_field')])->get();
                 $data['role_pk'] = config('menu.roles_pk');
                 $data['role_title_field'] = config('menu.roles_title_field');
             }
-            return view('wmenu::menu-html', $data);
+            return view('backend.website_settings.menu.wmenu.menu-html', $data);
         }
 
     }
 
     public function scripts()
     {
-        return view('wmenu::scripts');
+        return view('backend.website_settings.menu.wmenu.scripts');
     }
 
     public function select($name = "menu", $menulist = array())
