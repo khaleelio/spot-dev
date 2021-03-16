@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer_panel padding_bottom_half bottom20">
-                    <a href="index-logistic.html" class="footer_logo bottom25"><img src="logistic/images/logo-transparent.png" alt="MegaOne"></a>
+                    <a href="index-logistic.html" class="footer_logo bottom25"><img src="@if(setting()->get('footer_logo')) {{asset('/storage/app/public/'. setting()->get('footer_logo') )}} @else {{ static_asset('themes/dark/frontend/logistic/images/logo-transparent.png')}} @endif" alt="MegaOne"></a>
                     <p class="whitecolor bottom25">Keep away from people who try to belittle your ambitions Small people always do that but the really great Friendly.</p>
                     <div class="d-table w-100 address-item whitecolor bottom25">
                         <span class="d-table-cell align-middle"><i class="fas fa-mobile-alt"></i></span>
@@ -13,18 +13,11 @@
                         </p>
                     </div>
                     <ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">
-                        @if(setting()->get('facebook'))
-                            <li><a href="{{setting()->get('facebook_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-facebook-f"></i></a> </li>
-                        @endif
-                        @if(setting()->get('twitter'))
-                            <li><a href="{{setting()->get('twitter_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-twitter"></i> </a> </li>
-                        @endif
-                        @if(setting()->get('linkedin'))
-                            <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-linkedin-in"></i> </a> </li>
-                        @endif
-                        @if(setting()->get('instagram'))
-                            <li><a href="{{setting()->get('instagram_url') ?? '#'}}" target="_blank" class=""><i class="fab fa-instagram"></i> </a> </li>
-                        @endif
+                        @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                            @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                <li><a href="{{setting()->get('social_links_name')[$key]}}" target="_blank" class=""><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -64,12 +57,12 @@
                 </div>
             </div>
         </div>
-        <div class="py-4 d-flex flex-lg-column">
+        <div class="py-4 d-flex flex-lg-column" style="color: white">
             <!--begin::Container-->
             <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <!--begin::Copyright-->
-                <div class="text-dark order-2 order-md-1">
-                    {!! setting()->get('copy_right') ?? '' !!}
+                <div class="order-2 order-md-1">
+                    {!! setting()->get('footer_copy_right') ?? '' !!}
                 </div>
                 <!--end::Copyright-->
                 <!--begin::Nav-->

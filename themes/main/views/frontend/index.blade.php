@@ -150,18 +150,11 @@
         </div>
     </div>
     <ul class="social-icons-simple revicon white">
-        @if(setting()->get('facebook'))
-            <li class="d-table"><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-        @endif
-        @if(setting()->get('twitter'))
-            <li class="d-table"><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-        @endif
-        @if(setting()->get('linkedin'))
-            <li class="d-table"><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-        @endif
-        @if(setting()->get('instagram'))
-            <li class="d-table"><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-        @endif
+        @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+            @if($social_link_name || setting()->get('social_links_icon')[$key])
+                <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+            @endif
+        @endforeach
     </ul>
 </section>
 <!--Main Slider ends -->
@@ -236,7 +229,7 @@
                 <a href="javascript:void(0)" class="button gradient-btn mb-sm-0 mb-4">Learn More</a>
             </div>
             <div class="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
-                <div class="image"><img alt="SEO" src="logistic/images/awesome-feature.jpg')}}"></div>
+                <div class="image"><img alt="SEO" src="{{ static_asset('themes/main/frontend/logistic/images/awesome-feature.jpg')}}"></div>
             </div>
         </div>
     </div>
@@ -403,18 +396,11 @@
                                 <h4 class="darkcolor">Jason Wudex</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                   @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -428,18 +414,11 @@
                                 <h4 class="darkcolor">Mia Twain</h4>
                                 <p>Designer</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -453,18 +432,11 @@
                                 <h4 class="darkcolor">Peter Farry</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -478,18 +450,11 @@
                                 <h4 class="darkcolor">Hayden Wood</h4>
                                 <p>Marketing</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -503,18 +468,11 @@
                                 <h4 class="darkcolor">Shania Jackson</h4>
                                 <p>Print Media</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -528,18 +486,11 @@
                                 <h4 class="darkcolor">Jessica Biel</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -553,18 +504,11 @@
                                 <h4 class="darkcolor">Jessica Jung</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @if(setting()->get('facebook'))
-                                        <li><a href="{{ setting()->get('facebook_url') ?? '#'}}" class="facebook"><i class="fab fa-facebook-f"></i></a> </li>
-                                    @endif
-                                    @if(setting()->get('twitter'))
-                                        <li><a href="{{setting()->get('twitter_url') ?? '#'}}" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('linkedin'))
-                                        <li><a href="{{setting()->get('linkedin_url') ?? '#'}}" class="linkedin"><i class="fab fa-linkedin-in"></i> </a> </li>
-                                    @endif
-                                    @if(setting()->get('instagram'))
-                                        <li><a href="{{setting()->get('instagram_url') ?? '#'}}" class="insta"><i class="fab fa-instagram"></i> </a> </li>
-                                    @endif
+                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                        @endif
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
@@ -673,34 +617,34 @@
             <div class="col-md-12 col-sm-12">
                 <div id="partners-slider" class="owl-carousel">
                     <div class="item">
-                        <div class="logo-item"> <img alt="" src="logistic/images/logo-1.png')}}"></div>
+                        <div class="logo-item"> <img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-1.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-2.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-2.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-3.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-3.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-4.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-4.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-5.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-5.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-1.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-1.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-2.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-2.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-3.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-3.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-4.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-4.png')}}"></div>
                     </div>
                     <div class="item">
-                        <div class="logo-item"><img alt="" src="logistic/images/logo-5.png')}}"></div>
+                        <div class="logo-item"><img alt="" src="{{ static_asset('themes/main/frontend/logistic/images/logo-5.png')}}"></div>
                     </div>
                 </div>
             </div>

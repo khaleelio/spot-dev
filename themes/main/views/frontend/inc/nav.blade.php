@@ -216,9 +216,11 @@
             </nav>
             <div class="side-footer w-100">
                 <ul class="social-icons-simple white top40">
-                    <li><a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i> </a> </li>
-                    <li><a href="javascript:void(0)" class="insta"><i class="fab fa-instagram"></i> </a> </li>
+                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
+                        @if($social_link_name || setting()->get('social_links_icon')[$key])
+                            <li><a href="{{setting()->get('social_links_name')[$key]}}" class=""><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                        @endif
+                    @endforeach
                 </ul>
                 <p class="whitecolor">&copy; 2019 MegaOne. Made With Love by ThemesIndustry</p>
             </div>
