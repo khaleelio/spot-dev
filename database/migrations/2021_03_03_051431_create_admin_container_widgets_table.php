@@ -23,6 +23,7 @@ class CreateAdminContainerWidgetsTable extends Migration
             $table->longText('object')->nullable();
             $table->longText('value')->nullable();
             $table->string('link')->nullable();
+            $table->integer('count')->default(5);
             $table->integer('sort')->default(0);
             $table->string('class')->nullable();
             $table->unsignedBigInteger('parent_id')->default(0);

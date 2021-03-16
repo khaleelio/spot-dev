@@ -20,11 +20,15 @@ class MainWidget extends AbstractWidget
      * Return view() or other content to display.
      */
     public function run()
-    {
-        //
-
-        return view('widgets.main_widget', [
-            'config' => $this->config,
-        ]);
+    {   
+        if($this->config['type'] == "widget"){
+            return view('widgets.widget', [
+                'config' => $this->config,
+            ]);
+        }elseif($this->config['type'] == "container_widget"){
+            return view('widgets.container_widget', [
+                'config' => $this->config,
+            ]);
+        }
     }
 }

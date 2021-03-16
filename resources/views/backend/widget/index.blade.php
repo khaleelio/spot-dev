@@ -19,50 +19,7 @@
         <div class="col-lg-3">
             <div class="bg-white rounded p-3 dragula-container ng-isolate-scope col-lg-12" id="source">
                 @forelse ($widgets as $widget)
-                    <div class="card card-custom card-fit card-border card-collapsed widget mb-2" data-card="true" id="widget-{{$widget->id}}" data-widget-id="{{$widget->id}}">
-                        <div class="card-header p-2">
-                            <div class="card-title">
-                                <h3 class="card-label">{{$widget->title}}</h3>
-                            </div>
-                            <div class="card-toolbar">
-                                <a href="#" class="btn btn-xs btn-icon btn-danger mr-2 confirm-delete" data-href="{{ route('website.widget.container.destroy', '')}}" title="{{ translate('Delete') }}" style="display: none">
-                                    <i class="las la-trash"></i>
-                                </a>
-                                <a href="#" class="btn btn-xs btn-icon btn-success toggle" data-card-tool="toggle" style="display: none">
-                                    <i class="flaticon2-gear"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <form class="form" action="{{ route('website.widget.container.update') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <input type="hidden" name="id" value="" class="id">
-                            <div class="card-body p-2">
-                                @if($widget->type)
-                                    {!! json_decode($widget->object)->form !!}
-                                @else
-                                    <div class="form-group">
-                                        <label>{{ translate('Title') }}</label>
-                                        <input type="text" class="form-control" placeholder="title" name="title" value="{{$widget->title}}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ translate('Value') }}</label>
-                                        <textarea class="form-control" name="value" cols="30" rows="4">{{$widget->value}}</textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ translate('Link') }}</label>
-                                        <input type="text" class="form-control" placeholder="link" name="link" value="{{$widget->link}}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>{{ translate('Class') }}</label>
-                                        <input type="text" class="form-control" placeholder="class" name="class" value="{{$widget->class}}"/>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="card-footer text-center">
-                                <button type="submit" class="btn btn-success">{{ translate('Submit') }}</button>
-                            </div>
-                        </form>
-                    </div>
+                    @widget('mainWidget',['container_widget'=>$widget,'type'=>'widget'])
                 @empty
                     
                 @endforelse
@@ -72,14 +29,14 @@
             <div class="col-lg-3">
                 <div class="card-header p-0 m-0">
                     <div class="card-title m-0 px-5 pt-5 pb-3">
-                        <h3 class="card-label font-weight-bolder">{{$container->name}}</h3>
+                        <h3 class="card-label font-weight-bolder">{{$container->title}}</h3>
                     </div>
                 </div>
                 <div class="bg-white rounded-bottom p-5 dragula-container ng-isolate-scope col-lg-12" id="source">
                     <div class="dragula-container ng-isolate-scope">
                         <div id="container-{{$container->id}}" data-container-id="{{$container->id}}" style="min-height: 300px;">
                             @forelse ($container->container_widget as $container_widget)
-                                @widget('mainWidget',['container_widget'=>$container_widget])
+                                @widget('mainWidget',['container_widget'=>$container_widget,'type'=>'container_widget'])
                             @empty
         
                             @endforelse

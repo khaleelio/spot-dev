@@ -78,8 +78,8 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 		Route::post('/widget/store', 'AdminWidgetController@store')->name('website.widget.store');
 		Route::post('/widget/clone', 'AdminWidgetController@clone')->name('website.widget.clone');
 		Route::get('/widget/destroy/{id}', 'AdminWidgetController@destroy')->name('website.widget.destroy');
-		Route::post('/widget/container/update', 'AdminWidgetController@update_container_widget')->name('website.widget.container.update');
-		Route::get('/widget/container/destroy/{id}', 'AdminWidgetController@destroy_container_widget')->name('website.widget.container.destroy');
+		Route::post('/widget/container/update', 'AdminContainerWidgetController@update')->name('website.widget.container.update');
+		Route::get('/widget/container/destroy/{id}', 'AdminContainerWidgetController@destroy')->name('website.widget.container.destroy');
 		Route::get('/theme', 'AdminThemeController@index')->name('website.theme.index');
 		Route::post('/theme/update/active', 'AdminThemeController@update_active')->name('website.theme.update.active');
 		Route::get('/theme/option', 'AdminThemeOptionController@index')->name('website.theme.option.index');

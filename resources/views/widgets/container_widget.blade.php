@@ -17,16 +17,21 @@
         @csrf
         <input type="hidden" name="id" value="{{$config['container_widget']->id}}">
         <div class="card-body p-2">
-            @if($config['container_widget']->type)
+            @if(in_array( $config['container_widget']->type , ['about','contact_info','html','text']))
                 {!! json_decode($config['container_widget']->object)->form !!}
-            @else
+            @elseif($config['container_widget']->type == 'latest')
                 <div class="form-group">
                     <label>{{ translate('Title') }}</label>
                     <input type="text" class="form-control" placeholder="title" name="title" value="{{$config['container_widget']->title}}"/>
                 </div>
                 <div class="form-group">
-                    <label>{{ translate('Value') }}</label>
-                    <textarea class="form-control" name="value" cols="30" rows="4">{{$config['container_widget']->value}}</textarea>
+                    <label>{{ translate('Count') }}</label>
+                    <input type="number" class="form-control" min="1" placeholder="count" name="count" value="{{$config['container_widget']->count}}"/>
+                </div>
+            @else
+                <div class="form-group">
+                    <label>{{ translate('Title') }}</label>
+                    <input type="text" class="form-control" placeholder="title" name="title" value="{{$config['container_widget']->title}}"/>
                 </div>
                 <div class="form-group">
                     <label>{{ translate('Link') }}</label>
