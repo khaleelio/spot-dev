@@ -86,6 +86,11 @@ class AdminWidgetController extends Controller
                 $container_widget->object = $widget->object;
                 $container_widget->widget_id = $widget->id;
                 $container_widget->container_id = $request->container_id;
+                $container_widget->count = $widget->count;
+                $container_widget->widget_frontend = $widget->widget_frontend;
+                $container_widget->widget_backend = $widget->widget_backend;
+                $container_widget->container_widget_backend = $widget->container_widget_backend;
+                $container_widget->update = $widget->update;
                 // return $container_widget;
                 $container_widget->save();
                 $new_container_widget_id = $container_widget->id; 

@@ -26,7 +26,11 @@ class CreateAdminContainerWidgetsTable extends Migration
             $table->integer('count')->default(5);
             $table->integer('sort')->default(0);
             $table->string('class')->nullable();
-            $table->unsignedBigInteger('parent_id')->default(0);
+            $table->string('widget_frontend')->nullable();
+            $table->string('widget_backend')->nullable();
+            $table->string('container_widget_backend')->nullable();
+            $table->string('update')->nullable();
+            // $table->unsignedBigInteger('parent_id')->default(0);
             $table->timestamps();
         });
     }

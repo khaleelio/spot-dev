@@ -54,12 +54,9 @@ class AdminContainerWidgetController extends Controller
             // return $new_object;
             $widget->object = json_encode($new_object);
             $widget->save();
-        }elseif($widget->type == 'latest'){
-            $widget->title = $request->title;
-            $widget->count = $request->count;
-            $widget->save();
-        }
-        else{
+        }elseif($widget->type == 'query'){
+            $widget = app($widget->update)->widget_update($widget,$request);
+        }else{
             $widget->title = $request->title;
             $widget->value = $request->value ?? $widget->value;
             $widget->link = $request->link;
