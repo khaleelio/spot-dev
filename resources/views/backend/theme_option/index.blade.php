@@ -203,6 +203,7 @@
                 IconPicker.Run('#'+icon_buttons[index].id);
                 iconpicker_ids.push('#'+icon_buttons[index].id);
             }
+            console.log('function iconpicker():');
             console.log(iconpicker_ids);
         }
         iconpicker();
@@ -213,10 +214,9 @@
             for (let index = 0; index < x.length; index++) {
                 values.push(x[index].value ?? "");
             }
-            console.log(values);
 
             var content = document.getElementById('content_rows');
-            var count = iconpicker_ids.length;
+            var count = iconpicker_ids.length +1 ;
             content.innerHTML += row_content(count);
             for (let index = 0; index < x.length; index++) {
                 x[index].value = values[index] ?? "";
@@ -228,6 +228,7 @@
                     IconPicker.Run(iconpicker_ids[index]);
                 }
             }
+            console.log(iconpicker_ids);
         }
 
         function row_content(id) {
