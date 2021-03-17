@@ -51,7 +51,6 @@ Route::post('/subsubcategories/get_attributes_by_subsubcategory', 'SubSubCategor
 
 //Home Page
 Route::group(['middleware'=>'ThemeChanger'], function() {
-    // "admin-theme" will be applied to all routes defined here
     Route::get('/', 'HomeController@index')->name('home');
 });
 

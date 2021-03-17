@@ -23,5 +23,11 @@ class AdminThemeSeeder extends Seeder
         $theme->title = 'Dark Theme';
         $theme->active = 0;
         $theme->save();
+
+        $theme = new AdminTheme();
+        $theme->name = 'news';
+        $theme->title = 'News Theme';
+        $theme->active = 0;
+        $theme->save();
     }
 }
