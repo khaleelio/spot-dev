@@ -180,5 +180,23 @@ class WidgetSeeder extends Seeder
             $widget->object = json_encode($object);
             $widget->save();
         // End Text
+
+        // Start Latest Articles widget
+			$value = [
+                "id"=>""
+			];
+
+            $widget = new AdminWidget();
+            $widget->title = "Menu";
+            $widget->name = "menu";
+            $widget->value = json_encode($value);
+            $widget->type = "query";
+            $widget->widget_frontend = "";
+            $widget->widget_backend = "widgets.backend.widget.menu";
+            $widget->container_widget_backend = "widgets.backend.container_widget.menu";
+            $widget->update = "App\Http\Controllers\MenuController";
+            $widget->save();
+
+		// End Latest Articles widget
     }
 }
