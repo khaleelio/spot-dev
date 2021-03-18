@@ -147,7 +147,7 @@
         }
 
         .bdaia-header-default .header-container .bd-container {
-            background: url(assets/images/top-shadow.png) no-repeat top;
+            background: url({{ static_asset('themes/news/frontend/assets/images/top-shadow.png')}}) no-repeat top;
         }
 
         .bdaia-header-default .topbar.topbar-gradient .breaking-title {

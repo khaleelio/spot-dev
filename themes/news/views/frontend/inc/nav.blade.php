@@ -1,5 +1,147 @@
 <div class="header-wrapper header__light">
     <div class="clearfix"></div>
+    <div class="topbar topbar-gradient">
+        <div class="bd-container">
+            <div class="top-left-area">
+                <span class="bdaia-current-time"> November 05, 2020</span>
+                <div class="breaking-news-items">
+                    <span class="breaking-title">Trending Now</span>
+                    <div class="breaking-cont">
+                        <ul class="webticker">
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Australia just voted overwheinly favour legali...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;China’s phone market is now dominated by five...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Back these dreamy solar lanterns on Kickstarte...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;5 ways to bring your school’s community togeth...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Pepsi autopsy: How the brand got its commercia...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Why heterosexuals are so obsessed with height ...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Facebook&#8217;s fundraisers now help you rais...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;California judge dismisses lawsuit that claims...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Sparky Linux 5 : Great All-Purpose Distro...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;7 influential feminists share the most powerfu...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;Twitter is incorrectly guessing the gender of ...
+                                    </a>
+                                </h4>
+                            </li>
+                            <li>
+                                <h4>
+                                    <a href="single-page.html" rel="bookmark">
+                                        <span style="display: none;" class="bdaia-io bdaia-io-chevron_right"></span>
+                                        &nbsp;&nbsp;&nbsp;This browser extension makes you a more ethica...
+                                    </a>
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="top-right-area">
+                <div class="bdaia-social-io bdaia-social-io-size-32">
+                    <a class="bdaia-io-url-facebook" title="Facebook" href="#" target="_blank"><span class="bdaia-io bdaia-io-facebook"></span></a>
+                    <a class="bdaia-io-url-twitter" title="Twitter" href="#" target="_blank"><span class="bdaia-io bdaia-io-twitter"></span></a>
+                    <a class="bdaia-io-url-google-plus" title="Google+" href="#" target="_blank"><span class="bdaia-io bdaia-io-googleplus"></span></a>
+                    <a class="bdaia-io-url-dribbble" title="Dribbble" href="#" target="_blank"><span class="bdaia-io bdaia-io-dribbble"></span></a>
+                    <a class="bdaia-io-url-youtube" title="Youtube" href="#" target="_blank"><span class="bdaia-io bdaia-io-youtube"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <header class="header-container">
+        <div class="bd-container">
+            <div class="logo site--logo">
+                <h1 class="site-title">
+                    <a href="homepage.html" rel="home" title="Kolyoum">
+                        <img src="{{ static_asset('themes/news/frontend/assets/images/logo/default.svg')}}" alt="Kolyoum" />
+                    </a>
+                </h1>
+            </div>
+            <div class="bdaia-header-e3-desktop">
+                <div class="bdaia-e3-container">
+                    <a href="https://themeforest.net/item/i/19703399&utm_source=demos&utm_campaign=kolyoum&utm_content=main&utm_medium=srticle" target="_blank">
+                        <img style="max-width: 728px;" src="{{ static_asset('themes/news/frontend/assets/images/demo/a1456.jpg')}}" alt="" width="728" />
+                    </a>
+                </div>
+            </div>
+            <div class="bdaia-push-menu bd-mob-menu-btn">
+                <span class="bdaia-io bdaia-io-mobile"></span>
+            </div>
+        </div>
+        <div class="bd-bg" style="box-shadow: none !important; -webkit-box-shadow: none !important; -moz-box-shadow: none !important;"></div>
+    </header>
     <div class="navigation-outer">
         <nav id="navigation" class="fixed-enabled nav-boxed mainnav-dark dropdown-light">
             <div class="navigation-wrapper">
