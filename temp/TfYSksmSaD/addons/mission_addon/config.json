@@ -1,0 +1,72 @@
+{
+    "name" : "Missions",
+
+    "unique_identifier" : "mission_addon",
+
+    "version" : "0.1",
+
+    "minimum_item_version" : "3.7",
+
+    "addon_banner" : "mission_banner.jpg",
+
+    "required_addons" : "client_addon,captain_addon,branch_addon",
+
+    "directory" :
+    [
+        {
+          "name" : [
+              "resources/views/backend/missions"
+            ]
+        } 
+    ],
+
+    "sql_file"  : "",
+
+    "files"     :
+    [
+        {
+            "root_directory": "addons/mission_addon/assets/mission_banner.jpg",
+            "update_directory": "public/mission_banner.jpg"
+        },
+        {
+            "root_directory": "addons/mission_addon/views/mission/backend/show.blade.php",
+            "update_directory": "resources/views/backend/missions/show.blade.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/views/mission/backend/index.blade.php",
+            "update_directory": "resources/views/backend/missions/index.blade.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/views/mission/backend/ajaxed-confirm-amount.blade.php",
+            "update_directory": "resources/views/backend/missions/ajaxed-confirm-amount.blade.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/views/mission/inc/mission_sidenav.blade.php",
+            "update_directory": "resources/views/backend/inc/addons/mission_sidenav.blade.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/views/mission/permissions/mission_permissions.blade.php",
+            "update_directory": "resources/views/backend/permissions/mission_permissions.blade.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/routes/missions.php",
+            "update_directory": "routes/addons/missions.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/controllers/MissionsController.php",
+            "update_directory": "app/Http/Controllers/MissionsController.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/Mission.php",
+            "update_directory": "app/Mission.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/helpers/MissionActionHelper.php",
+            "update_directory": "app/Http/Helpers/MissionActionHelper.php"
+        },
+        {
+            "root_directory": "addons/mission_addon/helpers/MissionStatusManagerHelper.php",
+            "update_directory": "app/Http/Helpers/MissionStatusManagerHelper.php"
+        }
+    ]
+}

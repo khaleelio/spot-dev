@@ -1,0 +1,71 @@
+{
+    "name" : "Captains",
+
+    "unique_identifier" : "captain_addon",
+
+    "version" : "0.1",
+
+    "minimum_item_version" : "3.7",
+
+    "addon_banner" : "captain_banner.jpg",
+    "required_addons": "branch_addon",
+
+    "directory" :
+    [
+        {
+          "name" : [
+              "resources/views/backend/captains"
+            ]
+        } 
+    ],
+
+    "sql_file"  : "",
+
+    "files"     :
+    [
+        {
+            "root_directory": "addons/captain_addon/assets/captain_banner.jpg",
+            "update_directory": "public/captain_banner.jpg"
+        },
+        {
+            "root_directory": "addons/captain_addon/controllers/CaptainController.php",
+            "update_directory": "app/Http/Controllers/CaptainController.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/routes/captains.php",
+            "update_directory": "routes/addons/captains.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/views/captain/backend/create.blade.php",
+            "update_directory": "resources/views/backend/captains/create.blade.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/views/captain/backend/edit.blade.php",
+            "update_directory": "resources/views/backend/captains/edit.blade.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/views/captain/backend/show.blade.php",
+            "update_directory": "resources/views/backend/captains/show.blade.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/views/captain/backend/index.blade.php",
+            "update_directory": "resources/views/backend/captains/index.blade.php"
+        },
+        {
+            "root_directory"    : "addons/captain_addon/views/captain/inc/captain_sidenav.blade.php",
+            "update_directory"  : "resources/views/backend/inc/addons/captain_sidenav.blade.php"
+        },
+        {
+            "root_directory"    : "addons/captain_addon/views/captain/permissions/captain_permissions.blade.php",
+            "update_directory"  : "resources/views/backend/permissions/captain_permissions.blade.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/Captain.php",
+            "update_directory": "app/Captain.php"
+        },
+        {
+            "root_directory": "addons/captain_addon/UserCaptain.php",
+            "update_directory": "app/UserCaptain.php"
+        }
+    ]
+}
