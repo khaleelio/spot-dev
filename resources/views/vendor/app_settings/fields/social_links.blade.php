@@ -1,22 +1,22 @@
 <div class="form-group">
     <label>{{ translate('Social Links') }}</label>
     <div class="w3-links-target" id="content_rows">
-        <input type="hidden" name="social_links_icon[]">
-        <input type="hidden" name="social_links_name[]">
-        @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-            @if($social_link_name || setting()->get('social_links_icon')[$key])
+        <input type="hidden" name="{{$active_theme}}_social_links_icon[]">
+        <input type="hidden" name="{{$active_theme}}_social_links_name[]">
+        @foreach (setting()->get($active_theme.'_social_links_name') as $key => $social_link_name)
+            @if($social_link_name || setting()->get($active_theme.'_social_links_icon')[$key])
                 <div class="row gutters-5">
                     <div class="col-5">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="https://" name="social_links_name[]" value="{{setting()->get('social_links_name')[$key]}}">
+                            <input type="text" class="form-control" placeholder="https://" name="{{$active_theme}}_social_links_name[]" value="{{setting()->get($active_theme.'_social_links_name')[$key]}}">
                         </div>
                     </div>
                     <div class="col-3 button-add-icon">
                         <button btn btn-success mr-2 type="button" id="GetIconPicker-{{$key}}" data-iconpicker-input="#MyIconInput-{{$key}}" data-iconpicker-preview="#MyIconPreview-{{$key}}" class="icon-picker">Select Icon</button>
-                        <input type="hidden" name="social_links_icon[]" id="MyIconInput-{{$key}}" value="{{setting()->get('social_links_icon')[$key]}}">
+                        <input type="hidden" name="{{$active_theme}}_social_links_icon[]" id="MyIconInput-{{$key}}" value="{{setting()->get($active_theme.'_social_links_icon')[$key]}}">
                     </div>
                     <div class="col-2">
-                        <i id="MyIconPreview-{{$key}}" class="{{setting()->get('social_links_icon')[$key]}}" style="font-size: 35px;color: black;"></i>
+                        <i id="MyIconPreview-{{$key}}" class="{{setting()->get($active_theme.'_social_links_icon')[$key]}}" style="font-size: 35px;color: black;"></i>
                     </div>
                     <div class="col-2">
                         <button type="button" class="mt-1 btn btn-icon btn-circle btn-sm btn-soft-danger" data-toggle="remove-parent" data-parent=".row">

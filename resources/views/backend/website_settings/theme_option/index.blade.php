@@ -90,14 +90,23 @@
                     <div class="col-sm-6 col-md-3 col-lg-2">
                         <!--begin::Navigation-->
                         <ul class="navi navi-link-rounded navi-accent navi-hover navi-active nav flex-column mb-8 mb-lg-0" role="tablist">
+                            @php
+                                $counter = 0;
+                            @endphp
                             @forelse ($settings as $key => $section)
+                                @if ($active_theme != $section['theme'])
+                                    @continue
+                                @endif
                                 <!--begin::Nav Item-->
                                 <li class="navi-item mb-2">
-                                    <a class="navi-link @if($loop->first) active @endif" data-toggle="tab" href="#{{$key}}">
+                                    <a class="navi-link @if($counter == 0) active @endif" data-toggle="tab" href="#{{$key}}">
                                         <span class="navi-text text-dark-50 font-size-h5 font-weight-bold">{{$section['title'] ?? $section['name']}}</span>
                                     </a>
                                 </li>
                                 <!--end::Nav Item-->
+                                @php
+                                    $counter++;
+                                @endphp
                             @empty
 
                             @endforelse
@@ -112,9 +121,15 @@
                                 <form method="post" action="{{ url(config('app_settings.url')) }}" class="form-horizontal mb-3" enctype="multipart/form-data" role="form"  id="kt_form">
                                     {!! csrf_field() !!}
                                     <div class="tab-content">
+                                        @php
+                                            $counter = 0;
+                                        @endphp
                                         @forelse ($settings as $key => $section)
+                                            @if ($active_theme != $section['theme'])
+                                                @continue
+                                            @endif
                                             <!--begin::Tab-->
-                                            @if($loop->first)
+                                            @if($counter == 0)
                                                 <div class="tab-pane show px-7 active" id="{{$key}}" role="tabpanel">
                                             @else
                                                 <div class="tab-pane show px-7" id="{{$key}}" role="tabpanel">
@@ -141,6 +156,9 @@
                                                 <!--end::Row-->
                                             </div>
                                             <!--end::Tab-->
+                                            @php
+                                                $counter++;
+                                            @endphp
                                         @empty
 
                                         @endforelse
@@ -206,7 +224,7 @@
             var input_colors = document.getElementsByClassName('color-picker-input');
             var text = '';
             for (let index = 0; index < input_colors.length; index++) {
-                text += '#'+ input_colors[index].id + ", ";
+                text += '#'+ input_colors[index].id + "-div, ";
             }
             text = text.substring(0, text.length-2);
             $(text).colorpicker({
@@ -231,7 +249,7 @@
 
         function add_row(){
             var values = [];
-            var x = document.getElementsByClassName("social_links_name");
+            var x = document.getElementsByClassName("{{$active_theme}}_social_links_name");
             for (let index = 0; index < x.length; index++) {
                 values.push(x[index].value ?? "");
             }
@@ -256,12 +274,12 @@
             var row= `<div class="row gutters-5">
                     <div class="col-5">
                         <div class="form-group">
-                            <input type="text" class="form-control social_links_name" placeholder="https://" name="social_links_name[]">
+                            <input type="text" class="form-control {{$active_theme}}_social_links_name" placeholder="https://" name="{{$active_theme}}_social_links_name[]">
                         </div>
                     </div>
                     <div class="col-3 button-add-icon">
                         <button type="button" id="GetIconPicker-`+id+`" data-iconpicker-input="#MyIconInput-`+id+`" data-iconpicker-preview="#MyIconPreview-`+id+`" class="icon-picker">Select Icon</button>
-                        <input type="hidden" name="social_links_icon[]" id="MyIconInput-`+id+`">
+                        <input type="hidden" name="{{$active_theme}}_social_links_icon[]" id="MyIconInput-`+id+`">
                     </div>
                     <div class="col-2">
                         <i id="MyIconPreview-`+id+`" style="font-size: 35px;color: black;"></i>

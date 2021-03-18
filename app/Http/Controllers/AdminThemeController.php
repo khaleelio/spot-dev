@@ -33,7 +33,9 @@ class AdminThemeController extends Controller
 
     public function options(AppSettings $appSettings)
     {
+        $active_theme = AdminTheme::where('active','=',1)->get()->first();
         $settings = $appSettings->loadConfig(config('app_settings', []));
-        return view('backend.website_settings.theme_option.index', ['settings'=>$settings['sections']]);
+        return view('backend.website_settings.theme_option.index', ['settings'=>$settings['sections'],
+                    'active_theme' => $active_theme->name]);
     }
 }

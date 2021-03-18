@@ -9,8 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="app-url" content="{{ getBaseURL() }}">
     <meta name="file-base-url" content="{{ getFileBaseURL() }}">
-    <link rel="icon" href="@if(setting()->get('site_icon')) {{asset('/storage/app/public/'. setting()->get('site_icon') )}} @else {{static_asset('assets/dashboard/media/logos/favicon.ico')}} @endif">
-    <title>@yield('meta_title', ( setting()->get('app_name') ?? 'Spotlayer') .' | '. ( setting()->get('site_motto') ?? '') )</title>
+    <link rel="icon" href="@if(setting()->get('news_site_icon')) {{asset('/storage/app/public/'. setting()->get('news_site_icon') )}} @else {{static_asset('assets/dashboard/media/logos/favicon.ico')}} @endif">
+    <title>@yield('meta_title', ( setting()->get('news_app_name') ?? 'Spotlayer') .' | '. ( setting()->get('news_site_motto') ?? '') )</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

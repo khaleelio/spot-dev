@@ -216,9 +216,9 @@
             </nav>
             <div class="side-footer w-100">
                 <ul class="social-icons-simple white top40">
-                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                            <li><a href="{{setting()->get('social_links_name')[$key]}}" class=""><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                    @foreach (setting()->get('dark_social_links_name') as $key => $social_link_name)
+                        @if($social_link_name || setting()->get('dark_social_links_icon')[$key])
+                            <li><a href="{{setting()->get('dark_social_links_name')[$key]}}" class=""><i class="{{setting()->get('dark_social_links_icon')[$key]}}"></i> </a> </li>
                         @endif
                     @endforeach
                 </ul>

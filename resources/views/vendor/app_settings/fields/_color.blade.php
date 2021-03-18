@@ -1,5 +1,5 @@
 @component('app_settings::input_group', compact('field'))
-    <div id="cp2" class="input-group" title="Using input value">
+    <div id="{{ Arr::get($field, 'id') }}-div" class="input-group" title="Using input value">
         <input type="text" 
                 class="{{ Arr::get( $field, 'class', config('app_settings.input_class', 'form-control')) }} {{ $errors->has($field['name']) ? config('app_settings.input_invalid_class', 'is-invalid') : '' }} input-lg" 
                 value="{{ old($field['name'], \setting($field['name'])) }}"

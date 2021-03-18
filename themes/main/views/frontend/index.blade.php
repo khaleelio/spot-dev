@@ -150,9 +150,9 @@
         </div>
     </div>
     <ul class="social-icons-simple revicon white">
-        @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-            @if($social_link_name || setting()->get('social_links_icon')[$key])
-                <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+        @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+            @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
             @endif
         @endforeach
     </ul>
@@ -396,9 +396,9 @@
                                 <h4 class="darkcolor">Jason Wudex</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -414,9 +414,9 @@
                                 <h4 class="darkcolor">Mia Twain</h4>
                                 <p>Designer</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -432,9 +432,9 @@
                                 <h4 class="darkcolor">Peter Farry</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -450,9 +450,9 @@
                                 <h4 class="darkcolor">Hayden Wood</h4>
                                 <p>Marketing</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -468,9 +468,9 @@
                                 <h4 class="darkcolor">Shania Jackson</h4>
                                 <p>Print Media</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -486,9 +486,9 @@
                                 <h4 class="darkcolor">Jessica Biel</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
@@ -504,9 +504,9 @@
                                 <h4 class="darkcolor">Jessica Jung</h4>
                                 <p>Agency Owner</p>
                                 <ul class="social-icons-simple">
-                                    @foreach (setting()->get('social_links_name') as $key => $social_link_name)
-                                        @if($social_link_name || setting()->get('social_links_icon')[$key])
-                                            <li class="d-table"><a href="{{setting()->get('social_links_name')[$key]}}"><i class="{{setting()->get('social_links_icon')[$key]}}"></i> </a> </li>
+                                    @foreach (setting()->get('main_social_links_name') as $key => $social_link_name)
+                                        @if($social_link_name || setting()->get('main_social_links_icon')[$key])
+                                            <li class="d-table"><a href="{{setting()->get('main_social_links_name')[$key]}}"><i class="{{setting()->get('main_social_links_icon')[$key]}}"></i> </a> </li>
                                         @endif
                                     @endforeach
                                 </ul>
