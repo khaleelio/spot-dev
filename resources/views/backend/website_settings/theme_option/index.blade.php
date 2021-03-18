@@ -222,7 +222,7 @@
             var icon_buttons = document.getElementsByClassName('icon-picker');
             for (let index = 0; index < icon_buttons.length; index++) {
                 IconPicker.Run('#'+icon_buttons[index].id);
-                iconpicker_ids.push('#'+icon_buttons[index].id);
+                iconpicker_ids.push(icon_buttons[index].id);
             }
             console.log('function iconpicker():');
             console.log(iconpicker_ids);
@@ -243,9 +243,11 @@
                 x[index].value = values[index] ?? "";
             }
 
-            iconpicker_ids.push('#GetIconPicker-'+count);
+            iconpicker_ids.push('GetIconPicker-'+count);
             for (let index = 0; index < iconpicker_ids.length; index++) {
-                IconPicker.Run(iconpicker_ids[index]);
+                if(document.getElementById(iconpicker_ids[index])){
+                    IconPicker.Run('#'+iconpicker_ids[index]);
+                }
             }
             console.log(iconpicker_ids);
         }
