@@ -1,5 +1,37 @@
 @extends('backend.layouts.app')
 
+
+
+@section('subheader')
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">{{ translate('Theme Options') }}</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm mr-5">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('admin.dashboard')}}" class="text-muted">{{translate('Dashboard')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="#" class="text-muted">{{ translate('Theme Options') }}</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+@endsection
+
 @section('style')
     {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> --}}
     <style>
@@ -48,13 +80,6 @@
             return $value;
         }
         // return $settingsUI['sections']; --}}
-        <div class="aiz-titlebar text-left mt-2 mb-3">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h1 class="h3">{{ translate('Theme Options') }}</h1>
-                </div>
-            </div>
-        </div>
 
         <!--begin::Card-->
         <div class="card mb-8" style="min-height: 320px;">
@@ -62,17 +87,13 @@
             <div class="card-body p-10">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-sm-6 col-md-3 col-lg-2">
                         <!--begin::Navigation-->
                         <ul class="navi navi-link-rounded navi-accent navi-hover navi-active nav flex-column mb-8 mb-lg-0" role="tablist">
                             @forelse ($settings as $key => $section)
                                 <!--begin::Nav Item-->
                                 <li class="navi-item mb-2">
-                                    @if($loop->first)
-                                        <a class="navi-link active" data-toggle="tab" href="#{{$key}}">
-                                    @else
-                                        <a class="navi-link" data-toggle="tab" href="#{{$key}}">
-                                    @endif
+                                    <a class="navi-link @if($loop->first) active @endif" data-toggle="tab" href="#{{$key}}">
                                         <span class="navi-text text-dark-50 font-size-h5 font-weight-bold">{{$section['title'] ?? $section['name']}}</span>
                                     </a>
                                 </li>
@@ -83,7 +104,7 @@
                         </ul>
                         <!--end::Navigation-->
                     </div>
-                    <div class="col-lg-9">
+                    <div class="col-sm-6 col-md-9 col-lg-10">
                         <!--begin::Tab Content-->
                         <div class="tab-content">
                             <!--begin::Accordion-->

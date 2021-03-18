@@ -14,7 +14,7 @@ class AdminContainerController extends Controller
         $containers = AdminContainer::all();
         $widgets = AdminWidget::all();
 
-        return view('backend.widget.index',['containers'=>$containers,'widgets'=>$widgets]);
+        return view('backend.website_settings.widget.index',['containers'=>$containers,'widgets'=>$widgets]);
     }
 
     public function store($request)

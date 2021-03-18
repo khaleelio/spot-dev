@@ -13,7 +13,7 @@
 	</div>
 	<div class="form-group">
 		<label>{{ translate('Uploaded By') }}</label>
-		<input type="text" class="form-control" value="{{ $file->user->name }}" disabled>
+		<input type="text" class="form-control" value="{{ ($file->user ? $file->user->name : '') }}" disabled>
 	</div>
 	<div class="form-group">
 		<label>{{ translate('Uploaded At') }}</label>

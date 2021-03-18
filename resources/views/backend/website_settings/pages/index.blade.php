@@ -1,19 +1,41 @@
 @extends('backend.layouts.app')
 
+@section('subheader')
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">{{ translate('Website Pages') }}</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm mr-5">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('admin.dashboard')}}" class="text-muted">{{translate('Dashboard')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="#" class="text-muted">{{ translate('Website Pages') }}</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+					<!--begin::Actions-->
+					<a href="{{ route('custom-pages.create') }}" class="btn btn-light-primary font-weight-bolder btn-sm"><i class="flaticon2-add-1"></i> {{translate('Add New Page')}}</a>
+					<!--end::Actions-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+@endsection
+
 @section('content')
-<div class="aiz-titlebar text-left mt-2 mb-3">
-	<div class="row align-items-center">
-		<div class="col">
-			<h1 class="h3">{{ translate('Website Pages') }}</h1>
-		</div>
-	</div>
-</div>
 
 <div class="card">
-	<div class="card-header">
-		<h6 class="mb-0 fw-600">{{ translate('All Pages') }}</h6>
-		<a href="{{ route('custom-pages.create') }}" class="btn btn-primary">{{ translate('Add New Page') }}</a>
-	</div>
 	<div class="card-body">
 		<table class="table aiz-table mb-0">
         <thead>

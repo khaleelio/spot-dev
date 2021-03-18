@@ -63257,3 +63257,16 @@ body {
       -webkit-box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
     box-shadow: 0 10px 30px 0 rgba(82,63,105,.08);
 }
+
+.aiz-file-box .dropdown-file{
+  position: absolute;
+  z-index: 9;
+  top: 10px;
+  right: 5px;
+  color: #fff;
+}
+.aiz-file-box .dropdown-file a.dropdown-link i{
+  color: #fff;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+  font-size: 20px;
+}

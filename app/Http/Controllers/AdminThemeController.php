@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use QCod\AppSettings\Setting\AppSettings;
 use App\AdminTheme;
 
 class AdminThemeController extends Controller
@@ -10,7 +11,7 @@ class AdminThemeController extends Controller
     public function index()
     {
         $themes = AdminTheme::all();
-        return view('backend.theme.index', ['themes'=>$themes]);
+        return view('backend.website_settings.theme.index', ['themes'=>$themes]);
     }
 
     public function update_active(Request $request)
@@ -28,5 +29,11 @@ class AdminThemeController extends Controller
         $theme->save();
         flash(translate('This theme is activated successfully'))->success();
         return redirect()->back();
+    }
+
+    public function options(AppSettings $appSettings)
+    {
+        $settings = $appSettings->loadConfig(config('app_settings', []));
+        return view('backend.website_settings.theme_option.index', ['settings'=>$settings['sections']]);
     }
 }

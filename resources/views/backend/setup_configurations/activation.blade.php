@@ -1,5 +1,36 @@
 @extends('backend.layouts.app')
 
+
+@section('subheader')
+    <!--begin::Subheader-->
+    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+            <!--begin::Info-->
+            <div class="d-flex align-items-center flex-wrap mr-1">
+                <!--begin::Page Heading-->
+                <div class="d-flex align-items-baseline flex-wrap mr-5">
+                    <!--begin::Page Title-->
+                    <h5 class="text-dark font-weight-bold my-1 mr-5">{{ translate('Features Activation') }}</h5>
+                    <!--end::Page Title-->
+                    <!--begin::Breadcrumb-->
+                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm mr-5">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="{{ route('admin.dashboard')}}" class="text-muted">{{translate('Dashboard')}}</a>
+                        </li>
+                        <li class="breadcrumb-item text-muted">
+                            <a href="#" class="text-muted">{{ translate('Features Activation') }}</a>
+                        </li>
+                    </ul>
+                    <!--end::Breadcrumb-->
+                </div>
+                <!--end::Page Heading-->
+            </div>
+            <!--end::Info-->
+        </div>
+    </div>
+    <!--end::Subheader-->
+@endsection
+
 @section('content')
 
 <h4 class="text-center text-muted">{{translate('HTTPS Activation')}}</h4>
@@ -11,7 +42,7 @@
             </div>
             <div class="card-body text-center">
                 <label class="aiz-switch aiz-switch-success mb-0">
-                    <input type="checkbox" onchange="updateSettings(this, 'FORCE_HTTPS')" <?php if(env('FORCE_HTTPS') == 'On') echo "checked";?>>
+                    <input data-switch="true" onchange="updateSettings(this, 'FORCE_HTTPS')" type="checkbox" <?php if(env('FORCE_HTTPS') == 'On') echo "checked";?> data-on-text="{{translate('Enabled')}}" data-handle-width="100" data-off-text="{{translate('Disabled')}}" data-on-color="success" />
                     <span class="slider round"></span>
                 </label>
             </div>
@@ -461,5 +492,26 @@
                 }
             });
         }
+        // Class definition
+
+        var KTBootstrapSwitch = function() {
+
+        // Private functions
+        var demos = function() {
+        // minimum setup
+        $('[data-switch=true]').bootstrapSwitch();
+        };
+
+        return {
+        // public functions
+        init: function() {
+        demos();
+        },
+        };
+        }();
+
+        jQuery(document).ready(function() {
+        KTBootstrapSwitch.init();
+        });
     </script>
 @endsection
