@@ -38,10 +38,10 @@ trait SavesSettings
 
         // save settings
         $appSettings->save($request);
-        flash(translate(config('app_settings.submit_success_message', 'Settings Saved.')))->success();
-        return redirect(config('app_settings.url', '/'));
-            // ->with([
-            //     'status' => config('app_settings.submit_success_message', 'Settings Saved.')
-            // ]);
+
+        return redirect(config('app_settings.url', '/'))
+            ->with([
+                'status' => config('app_settings.submit_success_message', 'Settings Saved.')
+            ]);
     }
 }

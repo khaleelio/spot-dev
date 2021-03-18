@@ -334,6 +334,10 @@
 				AIZ.plugins.notify('warning', '{{ $error }}');
             @endforeach
 		@endif
+
+		@if ($msg = Session::get('status'))
+			AIZ.plugins.notify('success', '{{ $msg }}');
+		@endif
 		
 		$.ajaxSetup({
 			headers: {

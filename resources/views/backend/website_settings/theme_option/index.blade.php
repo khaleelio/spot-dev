@@ -109,7 +109,7 @@
                         <div class="tab-content">
                             <!--begin::Accordion-->
                             <div class="accordion accordion-light accordion-light-borderless accordion-svg-toggle" id="faq">
-                                <form method="post" action="{{ route('website.theme.option.store') }}" class="form-horizontal mb-3" enctype="multipart/form-data" role="form"  id="kt_form">
+                                <form method="post" action="{{ url(config('app_settings.url')) }}" class="form-horizontal mb-3" enctype="multipart/form-data" role="form"  id="kt_form">
                                     {!! csrf_field() !!}
                                     <div class="tab-content">
                                         @forelse ($settings as $key => $section)
@@ -245,9 +245,7 @@
 
             iconpicker_ids.push('#GetIconPicker-'+count);
             for (let index = 0; index < iconpicker_ids.length; index++) {
-                if(document.getElementById('GetIconPicker-'+index)){
-                    IconPicker.Run(iconpicker_ids[index]);
-                }
+                IconPicker.Run(iconpicker_ids[index]);
             }
             console.log(iconpicker_ids);
         }
